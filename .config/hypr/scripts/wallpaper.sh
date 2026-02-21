@@ -154,10 +154,10 @@ fi
 # -----------------------------------------------------
 # Neovim sync
 # -----------------------------------------------------
-if command -v wal >/dev/null 2>&1; then
-  wal -i "$used_wallpaper" >/dev/null 2>&1 &
-  disown
-fi
+# if command -v wal >/dev/null 2>&1; then
+#   wal -i "$used_wallpaper" >/dev/null 2>&1 &
+#   disown
+# fi
 
 # -----------------------------------------------------
 # Reload Waybar
