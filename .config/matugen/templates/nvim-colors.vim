@@ -103,4 +103,23 @@ hi IblScope guifg={{colors.primary.default.hex}}
 " Bufferline (tabs)
 hi BufferLineBackground guifg={{colors.outline.default.hex}} guibg=NONE
 hi BufferLineFill guibg=NONE
-hi BufferLineBufferSelected guifg={{colors.on_surface.default.hex}} guibg={{colors.surface_container.default.hex}} gui=bold
+hi BufferLineBufferSelected guifg={{colors.on_surface.default.hex}} guibg=NONE gui=bold
+hi BufferLineBufferVisible guifg={{colors.outline.default.hex}} guibg=NONE
+hi BufferLineSeparator guifg={{colors.surface.default.hex}} guibg=NONE
+hi BufferLineSeparatorSelected guifg={{colors.primary.default.hex}} guibg=NONE
+hi BufferLineSeparatorVisible guifg={{colors.surface.default.hex}} guibg=NONE
+hi BufferLineIndicatorSelected guifg={{colors.primary.default.hex}} guibg=NONE
+hi BufferLineModified guifg={{colors.tertiary.default.hex}} guibg=NONE
+hi BufferLineModifiedSelected guifg={{colors.tertiary.default.hex}} guibg=NONE
+hi BufferLineModifiedVisible guifg={{colors.tertiary.default.hex}} guibg=NONE
+hi BufferLineTab guifg={{colors.outline.default.hex}} guibg=NONE
+hi BufferLineTabSelected guifg={{colors.primary.default.hex}} guibg=NONE
+hi BufferLineTabClose guifg={{colors.outline.default.hex}} guibg=NONE
+hi BufferLineDuplicate guifg={{colors.outline.default.hex}} guibg=NONE
+hi BufferLineDuplicateSelected guifg={{colors.on_surface.default.hex}} guibg=NONE
+hi BufferLineDuplicateVisible guifg={{colors.outline.default.hex}} guibg=NONE
+hi BufferLineCloseButton guifg={{colors.outline.default.hex}} guibg=NONE
+hi BufferLineCloseButtonSelected guifg={{colors.error.default.hex}} guibg=NONE
+hi BufferLineCloseButtonVisible guifg={{colors.outline.default.hex}} guibg=NONE
+hi TabLineFill guibg=NONE
+
