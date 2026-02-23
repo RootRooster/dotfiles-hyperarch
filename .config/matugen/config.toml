@@ -80,3 +80,7 @@ post_hook = "jq --slurpfile palette ~/.config/ohmyposh/colors.json '. + $palette
 input_path = '~/.config/matugen/templates/nvim-colors.vim'
 output_path = '~/.config/nvim/colors/matugen.vim'
 post_hook = 'pkill -SIGUSR1 nvim'
+
+[templates.firefox]
+input_path  = "~/.config/matugen/templates/firefox-userChrome.css"
+output_path = "~/.config/mozilla/firefox/6fsyuyb1.default-release/chrome/userChrome.css"
