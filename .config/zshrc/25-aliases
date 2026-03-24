@@ -49,6 +49,15 @@ alias ascii='~/.config/ml4w/scripts/ml4w-ascii-header'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
 # -----------------------------------------------------
-# Custom
+# Bat (cat replacement)
 # -----------------------------------------------------
-alias z=zoxide
+alias cat='bat'
+alias less='bat --paging=always'
+alias bathelp='bat --plain --language=help'
+# pipe any command's --help through bat: e.g. help git
+help() { "$@" --help 2>&1 | bathelp; }
+
+# -----------------------------------------------------
+# Zoxide (cd replacement)
+# -----------------------------------------------------
+eval "$(zoxide init zsh --cmd cd)"

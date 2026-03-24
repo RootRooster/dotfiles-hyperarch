@@ -84,3 +84,12 @@ post_hook = 'pkill -SIGUSR1 nvim'
 [templates.firefox]
 input_path  = "~/.config/matugen/templates/firefox-userChrome.css"
 output_path = "~/.config/mozilla/firefox/6fsyuyb1.default-release/chrome/userChrome.css"
+
+[templates.bat]
+input_path = '~/.config/matugen/templates/bat-theme.tmTheme'
+output_path = '~/.config/bat/themes/matugen.tmTheme'
+post_hook = 'bat cache --build'
+
+[templates.vesktop]
+input_path = '~/.config/matugen/templates/vesktop-colors.css'
+output_path = '~/.config/vesktop/settings/quickCss.css'

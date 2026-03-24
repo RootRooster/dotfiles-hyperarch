@@ -6,120 +6,120 @@ if exists('syntax_on')
 endif
 let g:colors_name='matugen'
 
-hi Normal guifg=#dee4e4 guibg=NONE
-hi Comment guifg=#899294 gui=italic
-hi String guifg=#b8c6ea
-hi Keyword guifg=#81d3dd
-hi Function guifg=#b1cbce
-hi Type guifg=#b8c6ea
-hi Constant guifg=#81d3dd
-hi Statement guifg=#81d3dd
-hi Identifier guifg=#b1cbce
-hi PreProc guifg=#b8c6ea
+hi Normal guifg=#e0e2e8 guibg=NONE
+hi Comment guifg=#8c9198 gui=italic
+hi String guifg=#d3bfe6
+hi Keyword guifg=#9bcbfb
+hi Function guifg=#b9c8da
+hi Type guifg=#d3bfe6
+hi Constant guifg=#9bcbfb
+hi Statement guifg=#9bcbfb
+hi Identifier guifg=#b9c8da
+hi PreProc guifg=#d3bfe6
 hi Special guifg=#ffb4ab
-hi LineNr guifg=#899294 guibg=NONE
-hi CursorLineNr guifg=#81d3dd guibg=NONE
-hi CursorLine guibg=#1a2121
-hi Visual guibg=#004f55
-hi Pmenu guifg=#dee4e4 guibg=#1a2121
-hi PmenuSel guifg=#00363b guibg=#81d3dd
-hi StatusLine guifg=#dee4e4 guibg=NONE
-hi Search guifg=#00363b guibg=#81d3dd
+hi LineNr guifg=#8c9198 guibg=NONE
+hi CursorLineNr guifg=#9bcbfb guibg=NONE
+hi CursorLine guibg=#1c2024
+hi Visual guibg=#0f4a73
+hi Pmenu guifg=#e0e2e8 guibg=#1c2024
+hi PmenuSel guifg=#003353 guibg=#9bcbfb
+hi StatusLine guifg=#e0e2e8 guibg=NONE
+hi Search guifg=#003353 guibg=#9bcbfb
 hi SignColumn guibg=NONE
 hi DiagnosticError guifg=#ffb4ab
-hi DiagnosticWarn guifg=#b8c6ea
-hi DiagnosticInfo guifg=#81d3dd
-hi DiagnosticHint guifg=#b1cbce
+hi DiagnosticWarn guifg=#d3bfe6
+hi DiagnosticInfo guifg=#9bcbfb
+hi DiagnosticHint guifg=#b9c8da
 
 " Neo-tree
-hi NeoTreeNormal guifg=#dee4e4 guibg=NONE
-hi NeoTreeNormalNC guifg=#dee4e4 guibg=NONE
-hi NeoTreeEndOfBuffer guifg=#0e1415 guibg=NONE
-hi NeoTreeDirectoryName guifg=#81d3dd
-hi NeoTreeDirectoryIcon guifg=#81d3dd
-hi NeoTreeFileName guifg=#dee4e4
-hi NeoTreeFileIcon guifg=#dee4e4
-hi NeoTreeRootName guifg=#81d3dd gui=bold
-hi NeoTreeGitModified guifg=#b8c6ea
-hi NeoTreeGitAdded guifg=#b1cbce
+hi NeoTreeNormal guifg=#e0e2e8 guibg=NONE
+hi NeoTreeNormalNC guifg=#e0e2e8 guibg=NONE
+hi NeoTreeEndOfBuffer guifg=#101418 guibg=NONE
+hi NeoTreeDirectoryName guifg=#9bcbfb
+hi NeoTreeDirectoryIcon guifg=#9bcbfb
+hi NeoTreeFileName guifg=#e0e2e8
+hi NeoTreeFileIcon guifg=#e0e2e8
+hi NeoTreeRootName guifg=#9bcbfb gui=bold
+hi NeoTreeGitModified guifg=#d3bfe6
+hi NeoTreeGitAdded guifg=#b9c8da
 hi NeoTreeGitDeleted guifg=#ffb4ab
-hi NeoTreeGitUntracked guifg=#899294
-hi NeoTreeIndentMarker guifg=#899294
-hi NeoTreeCursorLine guibg=#1a2121
-hi NeoTreeTitleBar guifg=#00363b guibg=#81d3dd
-hi NeoTreeFloatBorder guifg=#899294 guibg=NONE
-hi NeoTreeWinSeparator guifg=#899294 guibg=NONE
+hi NeoTreeGitUntracked guifg=#8c9198
+hi NeoTreeIndentMarker guifg=#8c9198
+hi NeoTreeCursorLine guibg=#1c2024
+hi NeoTreeTitleBar guifg=#003353 guibg=#9bcbfb
+hi NeoTreeFloatBorder guifg=#8c9198 guibg=NONE
+hi NeoTreeWinSeparator guifg=#8c9198 guibg=NONE
 
 " Floating windows & borders
-hi NormalFloat guifg=#dee4e4 guibg=NONE
-hi FloatBorder guifg=#899294 guibg=NONE
-hi FloatTitle guifg=#81d3dd guibg=NONE
+hi NormalFloat guifg=#e0e2e8 guibg=NONE
+hi FloatBorder guifg=#8c9198 guibg=NONE
+hi FloatTitle guifg=#9bcbfb guibg=NONE
 
 " Telescope
-hi TelescopeNormal guifg=#dee4e4 guibg=NONE
-hi TelescopeBorder guifg=#899294 guibg=NONE
-hi TelescopeTitle guifg=#81d3dd
-hi TelescopePromptNormal guifg=#dee4e4 guibg=NONE
-hi TelescopePromptBorder guifg=#899294 guibg=NONE
-hi TelescopePromptTitle guifg=#00363b guibg=#81d3dd
-hi TelescopeResultsNormal guifg=#dee4e4 guibg=NONE
-hi TelescopeResultsBorder guifg=#899294 guibg=NONE
-hi TelescopePreviewNormal guifg=#dee4e4 guibg=NONE
-hi TelescopePreviewBorder guifg=#899294 guibg=NONE
-hi TelescopeSelection guibg=#252b2c
-hi TelescopeMatching guifg=#81d3dd gui=bold
+hi TelescopeNormal guifg=#e0e2e8 guibg=NONE
+hi TelescopeBorder guifg=#8c9198 guibg=NONE
+hi TelescopeTitle guifg=#9bcbfb
+hi TelescopePromptNormal guifg=#e0e2e8 guibg=NONE
+hi TelescopePromptBorder guifg=#8c9198 guibg=NONE
+hi TelescopePromptTitle guifg=#003353 guibg=#9bcbfb
+hi TelescopeResultsNormal guifg=#e0e2e8 guibg=NONE
+hi TelescopeResultsBorder guifg=#8c9198 guibg=NONE
+hi TelescopePreviewNormal guifg=#e0e2e8 guibg=NONE
+hi TelescopePreviewBorder guifg=#8c9198 guibg=NONE
+hi TelescopeSelection guibg=#272a2f
+hi TelescopeMatching guifg=#9bcbfb gui=bold
 
 " Lazy plugin manager
-hi LazyNormal guifg=#dee4e4 guibg=NONE
-hi LazyButton guifg=#dee4e4 guibg=#252b2c
-hi LazyButtonActive guifg=#00363b guibg=#81d3dd
-hi LazyH1 guifg=#00363b guibg=#81d3dd
-hi LazyH2 guifg=#81d3dd gui=bold
-hi LazySpecial guifg=#b1cbce
-hi LazyCommit guifg=#899294
+hi LazyNormal guifg=#e0e2e8 guibg=NONE
+hi LazyButton guifg=#e0e2e8 guibg=#272a2f
+hi LazyButtonActive guifg=#003353 guibg=#9bcbfb
+hi LazyH1 guifg=#003353 guibg=#9bcbfb
+hi LazyH2 guifg=#9bcbfb gui=bold
+hi LazySpecial guifg=#b9c8da
+hi LazyCommit guifg=#8c9198
 
 " WhichKey
-hi WhichKey guifg=#81d3dd
-hi WhichKeyGroup guifg=#b1cbce
-hi WhichKeyDesc guifg=#dee4e4
+hi WhichKey guifg=#9bcbfb
+hi WhichKeyGroup guifg=#b9c8da
+hi WhichKeyDesc guifg=#e0e2e8
 hi WhichKeyFloat guibg=NONE
-hi WhichKeyBorder guifg=#899294 guibg=NONE
+hi WhichKeyBorder guifg=#8c9198 guibg=NONE
 
 " Notifications (noice/notify)
-hi NotifyINFOBody guifg=#dee4e4 guibg=NONE
-hi NotifyINFOBorder guifg=#81d3dd guibg=NONE
-hi NotifyINFOTitle guifg=#81d3dd
-hi NotifyWARNBody guifg=#dee4e4 guibg=NONE
-hi NotifyWARNBorder guifg=#b8c6ea guibg=NONE
-hi NotifyWARNTitle guifg=#b8c6ea
-hi NotifyERRORBody guifg=#dee4e4 guibg=NONE
+hi NotifyINFOBody guifg=#e0e2e8 guibg=NONE
+hi NotifyINFOBorder guifg=#9bcbfb guibg=NONE
+hi NotifyINFOTitle guifg=#9bcbfb
+hi NotifyWARNBody guifg=#e0e2e8 guibg=NONE
+hi NotifyWARNBorder guifg=#d3bfe6 guibg=NONE
+hi NotifyWARNTitle guifg=#d3bfe6
+hi NotifyERRORBody guifg=#e0e2e8 guibg=NONE
 hi NotifyERRORBorder guifg=#ffb4ab guibg=NONE
 hi NotifyERRORTitle guifg=#ffb4ab
 
 " Indent guides
-hi IblIndent guifg=#252b2c
-hi IblScope guifg=#81d3dd
+hi IblIndent guifg=#272a2f
+hi IblScope guifg=#9bcbfb
 
 " Bufferline (tabs)
-hi BufferLineBackground guifg=#899294 guibg=NONE
+hi BufferLineBackground guifg=#8c9198 guibg=NONE
 hi BufferLineFill guibg=NONE
-hi BufferLineBufferSelected guifg=#dee4e4 guibg=NONE gui=bold
-hi BufferLineBufferVisible guifg=#899294 guibg=NONE
-hi BufferLineSeparator guifg=#0e1415 guibg=NONE
-hi BufferLineSeparatorSelected guifg=#81d3dd guibg=NONE
-hi BufferLineSeparatorVisible guifg=#0e1415 guibg=NONE
-hi BufferLineIndicatorSelected guifg=#81d3dd guibg=NONE
-hi BufferLineModified guifg=#b8c6ea guibg=NONE
-hi BufferLineModifiedSelected guifg=#b8c6ea guibg=NONE
-hi BufferLineModifiedVisible guifg=#b8c6ea guibg=NONE
-hi BufferLineTab guifg=#899294 guibg=NONE
-hi BufferLineTabSelected guifg=#81d3dd guibg=NONE
-hi BufferLineTabClose guifg=#899294 guibg=NONE
-hi BufferLineDuplicate guifg=#899294 guibg=NONE
-hi BufferLineDuplicateSelected guifg=#dee4e4 guibg=NONE
-hi BufferLineDuplicateVisible guifg=#899294 guibg=NONE
-hi BufferLineCloseButton guifg=#899294 guibg=NONE
+hi BufferLineBufferSelected guifg=#e0e2e8 guibg=NONE gui=bold
+hi BufferLineBufferVisible guifg=#8c9198 guibg=NONE
+hi BufferLineSeparator guifg=#101418 guibg=NONE
+hi BufferLineSeparatorSelected guifg=#9bcbfb guibg=NONE
+hi BufferLineSeparatorVisible guifg=#101418 guibg=NONE
+hi BufferLineIndicatorSelected guifg=#9bcbfb guibg=NONE
+hi BufferLineModified guifg=#d3bfe6 guibg=NONE
+hi BufferLineModifiedSelected guifg=#d3bfe6 guibg=NONE
+hi BufferLineModifiedVisible guifg=#d3bfe6 guibg=NONE
+hi BufferLineTab guifg=#8c9198 guibg=NONE
+hi BufferLineTabSelected guifg=#9bcbfb guibg=NONE
+hi BufferLineTabClose guifg=#8c9198 guibg=NONE
+hi BufferLineDuplicate guifg=#8c9198 guibg=NONE
+hi BufferLineDuplicateSelected guifg=#e0e2e8 guibg=NONE
+hi BufferLineDuplicateVisible guifg=#8c9198 guibg=NONE
+hi BufferLineCloseButton guifg=#8c9198 guibg=NONE
 hi BufferLineCloseButtonSelected guifg=#ffb4ab guibg=NONE
-hi BufferLineCloseButtonVisible guifg=#899294 guibg=NONE
+hi BufferLineCloseButtonVisible guifg=#8c9198 guibg=NONE
 hi TabLineFill guibg=NONE
 

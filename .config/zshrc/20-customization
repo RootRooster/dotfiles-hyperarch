@@ -32,6 +32,15 @@ source $ZSH/oh-my-zsh.sh
 # Set-up FZF key bindings (CTRL R for fuzzy history finder)
 # -----------------------------------------------------
 source <(fzf --zsh)
+export FZF_CTRL_T_OPTS="--preview 'bat --color=always --style=numbers --line-range=:500 {}'"
+export FZF_ALT_C_OPTS="--preview 'eza --tree --level=1 --icons=always --color=always {}'"
+
+# -----------------------------------------------------
+# Bat integrations (git, man, ripgrep)
+# -----------------------------------------------------
+export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -l man -p'"
+export MANROFFOPT="-c"
+export BAT_PAGER="less -RF"
 
 # zsh history
 HISTFILE=~/.zsh_history
