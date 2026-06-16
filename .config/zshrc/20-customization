@@ -1,7 +1,6 @@
 # -----------------------------------------------------
 # CUSTOMIZATION
 # -----------------------------------------------------
-POSH=agnoster
 
 # -----------------------------------------------------
 # oh-myzsh themes: https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
@@ -17,7 +16,6 @@ plugins=(
     web-search
     archlinux
     zsh-autosuggestions
-    zsh-syntax-highlighting
     fast-syntax-highlighting
     copyfile
     copybuffer
@@ -30,8 +28,10 @@ source $ZSH/oh-my-zsh.sh
 
 # -----------------------------------------------------
 # Set-up FZF key bindings (CTRL R for fuzzy history finder)
+# Deferred until after zsh-vi-mode initializes so fzf's
+# keybindings aren't clobbered by zvm's lazy init.
 # -----------------------------------------------------
-source <(fzf --zsh)
+zvm_after_init_commands+=('source <(fzf --zsh)')
 export FZF_CTRL_T_OPTS="--preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 export FZF_ALT_C_OPTS="--preview 'eza --tree --level=1 --icons=always --color=always {}'"
 
