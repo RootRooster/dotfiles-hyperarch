@@ -24,7 +24,7 @@ Open it from anywhere: `shortcuts` · `less $SHORTCUTS` · `bat $SHORTCUTS`
 | `Super + B` | Browser |
 | `Super + E` | File manager |
 | `Super + Shift + E` | yazi (terminal file manager), floating |
-| `Super + V` | Clipboard history |
+| `Super + V` | Clipboard history (see below) |
 | `Super + Ctrl + E` | Emoji picker (rofimoji) |
 | `Super + Ctrl + C` | Calculator |
 | `Super + Ctrl + K` | Searchable list of all key bindings |
@@ -179,6 +179,9 @@ Clicking an open panel's icon again closes it (calendar, Bluetooth, sound, netwo
 
 **Sound (pwvucontrol) and network (nmrs)** — normal GTK keys: `Tab` / `Shift + Tab` move · arrows adjust sliders and lists · `Space` / `Enter` activate
 
+**Clipboard history (`Super + V`)** — everything you copy is recorded (up to 750 entries; images get thumbnails).
+Type to search · `Enter` copy · `Shift + Enter` copy and paste into the window you came from · `Ctrl + D` delete entry · `Ctrl + Shift + D` clear all (asks first) · `Ctrl + J / K` move · `Esc` close
+
 **Lock screen** — type the password, `Enter`. The box turns magenta while checking, red if wrong, amber if Caps Lock is on.
 
 ---
@@ -211,22 +214,3 @@ Clicking an open panel's icon again closes it (calendar, Bluetooth, sound, netwo
 
 The session block on the left of the status bar turns magenta while the prefix is held.
 
----
-
-## Suggested shortcuts (not bound yet)
-
-Things set up in this session that only have a mouse route today. All keys below are
-currently free. To use one, paste its line into `~/.config/hypr/conf/custom.conf`.
-
-| Suggested keys | Action | Line to add |
-|---|---|---|
-| `Super + N` | Notification center | `bind = SUPER, N, exec, swaync-client -t -sw` |
-| `Super + Shift + N` | Do not disturb on/off | `bind = SUPER SHIFT, N, exec, swaync-client -d -sw` |
-| `Super + I` | Ask Claude (opens the AI tab directly) | `bind = SUPER, I, exec, rofi -show ai` |
-| `Super + C` | Calendar | `bind = SUPER, C, exec, ~/.config/waybar/scripts/agenda.sh --open` |
-| `Super + A` | Sound panel | `bind = SUPER, A, exec, ~/.config/waybar/scripts/sound-panel.sh` |
-| `Super + W` | Network manager | `bind = SUPER, W, exec, ~/.config/waybar/scripts/network-panel.sh` |
-| `Super + Alt + B` | Bluetooth | `bind = SUPER ALT, B, exec, ~/.config/waybar/scripts/cyber-term.sh cyber-bluetooth Bluetooth bluetui` |
-| `Super + Shift + I` | Copy VPN IP (LHOST) | `bind = SUPER SHIFT, I, exec, ~/.config/waybar/scripts/vpn-ip.sh --copy` |
-
-After editing, reload with `Super + Ctrl + R`.

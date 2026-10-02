@@ -1,0 +1,63 @@
+/*
+ * Cyber clipboard history (Super+V) — ~/.config/ml4w/scripts/ml4w-cliphist
+ * Builds on cyber-menu.rasi, adds a search bar and image thumbnails.
+ */
+
+@import "~/.config/rofi/cyber-menu.rasi"
+
+configuration {
+    show-icons:              true;
+    kb-row-down:             "Down,Control+n,Control+j";
+    kb-row-up:               "Up,Control+p,Control+k";
+    kb-accept-entry:         "Return,KP_Enter";
+    kb-accept-alt:           "";
+    kb-remove-char-forward:  "Delete";
+    kb-remove-to-eol:        "";
+    kb-mode-complete:        "";
+}
+
+window {
+    width: 52em;
+}
+
+mainbox {
+    children: [ "textbox-title", "inputbar", "listview", "message" ];
+}
+
+inputbar {
+    enabled:          true;
+    padding:          0.6em 0.9em;
+    spacing:          0.7em;
+    background-color: @bg-alt;
+    border:           0 0 1px 0;
+    border-color:     @dim;
+    children:         [ "textbox-arrow", "entry" ];
+}
+
+textbox-arrow {
+    expand:     false;
+    str:        "❯";
+    text-color: @accent2;
+}
+
+entry {
+    text-color:        @fg;
+    placeholder:       "search clipboard…";
+    placeholder-color: @dim;
+    cursor:            text;
+}
+
+listview {
+    lines:        10;
+    dynamic:      true;
+    fixed-height: true;
+}
+
+element {
+    spacing: 0.9em;
+}
+
+element-icon {
+    size:             1.7em;
+    background-color: transparent;
+}
