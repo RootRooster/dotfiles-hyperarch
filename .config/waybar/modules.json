@@ -54,12 +54,6 @@
     },
     "separate-outputs": true
   },
-  // ML4W Welcome App
-  "custom/ml4w-welcome": {
-    "on-click": "flatpak run com.ml4w.sidebar",
-    "format": " ",
-    "tooltip-format": "Open ML4W Sidebar App"
-  },
   // Empty
   "custom/empty": {
     "format": ""
@@ -119,12 +113,6 @@
     "format": "",
     "on-click": "~/.config/waybar/themeswitcher.sh",
     "tooltip-format": "Select a waybar theme"
-  },
-  // Settings
-  "custom/settings": {
-    "format": "",
-    "on-click": "sleep 0.1 && com.ml4w.dotfilessettings",
-    "tooltip-format": "ML4W Settings"
   },
   // Keybindings
   "custom/keybindings": {
@@ -223,7 +211,7 @@
   // Clock
   "clock": {
         "format": "{:%H:%M - %a %Od.%Om.%y}",
-    "on-click": "flatpak run com.ml4w.calendar",
+    "on-click": "~/.config/waybar/scripts/agenda.sh --open",
     "timezone": "",
     "tooltip": false
   },
@@ -311,7 +299,6 @@
       "transition-left-to-right": true
     },
     "modules": [
-      "custom/settings",
       "custom/waybarthemes",
       "custom/wallpaper"
     ]
