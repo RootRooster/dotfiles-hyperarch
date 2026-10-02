@@ -1,0 +1,12 @@
+/* Cyber Neon palette (matches the waybar "Cyber Neon" theme) */
+@define-color cy_bg      #0b1017;
+@define-color cy_bg_alt  #0f1620;
+@define-color cy_raise   #162130;
+@define-color cy_fg      #c8f7ff;
+@define-color cy_sub     #8fb8c4;
+@define-color cy_dim     #5f8794;
+@define-color cy_accent  #00f0ff;
+@define-color cy_accent2 #ff2bd6;
+@define-color cy_ok      #39ff14;
+@define-color cy_alert   #ff3355;
+@define-color cy_on_acc  #061016;

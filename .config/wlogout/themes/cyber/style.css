@@ -1,0 +1,72 @@
+/*
+ * Cyber power menu — side panel layout, mirroring the lock / login screens.
+ * Panel geometry is set by ~/.config/ml4w/scripts/ml4w-wlogout (560px panel).
+ * Icons in ./icons are neon-tinted copies of ../../icons.
+ */
+
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    background-image: none;
+    box-shadow: none;
+    transition: 120ms ease-out;
+}
+
+/* Dark 560px panel + 2px cyan edge, over the darkened blurred wallpaper */
+window {
+    background-image:
+        linear-gradient(to right,
+            rgba(11, 16, 23, 0.90) 0px,
+            rgba(11, 16, 23, 0.90) 560px,
+            #00f0ff 560px,
+            #00f0ff 562px,
+            rgba(5, 8, 12, 0.45) 562px,
+            rgba(5, 8, 12, 0.45) 100%),
+        url("../../../../.cache/ml4w/hyprland-dotfiles/blurred_wallpaper.png");
+    background-size: cover;
+}
+
+/* Each option is a full-width row: icon on the left, label + key hint */
+button {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 22px 56%;
+    background-size: 30px 30px;
+    color: #c8f7ff;
+    font-size: 22pt;
+    font-weight: bold;
+    border: none;
+    border-left: 3px solid transparent;
+    border-radius: 0;
+    margin: 0;
+    padding-left: 40px;
+    min-height: 70px;
+}
+
+button:focus,
+button:hover {
+    background-color: rgba(0, 240, 255, 0.10);
+    color: #00f0ff;
+    border-left: 3px solid #00f0ff;
+    box-shadow: inset 24px 0 24px -24px rgba(0, 240, 255, 0.45);
+    outline: none;
+}
+
+/* Power off: red, so the destructive option stands apart */
+#shutdown {
+    color: #ff6b84;
+}
+
+#shutdown:focus,
+#shutdown:hover {
+    background-color: rgba(255, 51, 85, 0.10);
+    color: #ff3355;
+    border-left: 3px solid #ff3355;
+    box-shadow: inset 24px 0 24px -24px rgba(255, 51, 85, 0.45);
+}
+
+#lock      { background-image: image(url("icons/lock.png")); }
+#logout    { background-image: image(url("icons/logout.png")); }
+#suspend   { background-image: image(url("icons/suspend.png")); }
+#hibernate { background-image: image(url("icons/hibernate.png")); }
+#reboot    { background-image: image(url("icons/reboot.png")); }
+#shutdown  { background-image: image(url("icons/shutdown.png")); }

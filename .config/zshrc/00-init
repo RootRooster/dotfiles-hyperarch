@@ -9,3 +9,5 @@ export EDITOR=nvim
 export ZSH="$HOME/.oh-my-zsh"
 export PATH=$PATH:~/.cargo/bin/
 export PATH=$PATH:~/.local/bin/
+export STUDENT_REPO=git@gitlab.tugraz.at:scs/s26/scs-group-10.git
+

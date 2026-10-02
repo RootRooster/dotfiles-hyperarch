@@ -4,22 +4,18 @@
   "positionY": "top",
   "layer": "overlay",
   "cssPriority": "user",
-
   "control-center-width": 360,
   "control-center-height": 700,
   "control-center-margin-top": 11,
   "control-center-margin-right": 3,
   "control-center-margin-left": 0,
-
   "notification-window-width": 360,
   "notification-icon-size": 48,
   "notification-body-image-height": 100,
   "notification-body-image-width": 200,
-
   "timeout": 4,
   "timeout-low": 2,
   "timeout-critical": 6,
-
   "fit-to-screen": false,
   "keyboard-shortcuts": true,
   "image-visibility": "when-available",
@@ -76,15 +72,15 @@
           "label": "",
           "type": "toggle",
           "active": true,
-          "command": "rfkill toggle bluetooth",
-          "update-command": ""
+          "command": "sh -c 'if [ \"$SWAYNC_TOGGLE_STATE\" = true ]; then rfkill unblock bluetooth; sleep 0.5; bluetoothctl power on; else bluetoothctl power off; fi'",
+          "update-command": "sh -c 'bluetoothctl show 2>/dev/null | grep -q \"Powered: yes\" && echo true || echo false'"
         },
         {
           "label": "󰕾",
           "type": "toggle",
           "active": true,
-          "command": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-          "update-command": ""
+          "command": "sh -c 'if [ \"$SWAYNC_TOGGLE_STATE\" = true ]; then wpctl set-mute @DEFAULT_AUDIO_SINK@ 0; else wpctl set-mute @DEFAULT_AUDIO_SINK@ 1; fi'",
+          "update-command": "sh -c 'wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q MUTED && echo false || echo true'"
         },
         {
           "label": "",

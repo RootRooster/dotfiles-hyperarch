@@ -1,0 +1,16 @@
+/* -----------------------------------------------------
+ * Cyber · Neon (fixed palette)
+ * ----------------------------------------------------- */
+@import '../../../../../.config/waybar/colors.css';
+
+@define-color cy_bg      rgba(8, 11, 16, 0.88);
+@define-color cy_bg_alt  #0f1620;
+@define-color cy_fg      #c8f7ff;
+@define-color cy_dim     #4a6b78;
+@define-color cy_accent  #00f0ff;
+@define-color cy_accent2 #ff2bd6;
+@define-color cy_ok      #39ff14;
+@define-color cy_warn    #ffb000;
+@define-color cy_alert   #ff3355;
+
+@import '../style.css';

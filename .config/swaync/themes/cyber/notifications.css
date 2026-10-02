@@ -1,0 +1,179 @@
+/* -----------------------------------------------------
+ * Cyber · pop-up notifications
+ * ----------------------------------------------------- */
+
+* {
+  all: unset;
+  font-family: "JetBrainsMono Nerd Font", "Font Awesome 7 Free", "Font Awesome 6 Free", monospace;
+  transition: 150ms;
+}
+
+.widget-mpris { all: unset; }
+
+.notification-row {
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Card */
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification {
+  background-color: alpha(@cy_bg, 0.96);
+  border-radius: 2px;
+  border: 1px solid alpha(@cy_accent, 0.30);
+  border-left: 3px solid @cy_accent;
+  margin: 8px 14px;
+  padding: 2px;
+  box-shadow: 0 0 10px alpha(@cy_accent, 0.18), 0 6px 16px alpha(black, 0.6);
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification.critical {
+  border: 1px solid alpha(@cy_alert, 0.55);
+  border-left: 3px solid @cy_alert;
+  box-shadow: 0 0 12px alpha(@cy_alert, 0.30), 0 6px 16px alpha(black, 0.6);
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification.low {
+  border: 1px solid alpha(@cy_dim, 0.35);
+  border-left: 3px solid @cy_dim;
+  box-shadow: 0 6px 16px alpha(black, 0.6);
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification
+  .notification-content {
+  margin: 10px 12px;
+  padding: 2px;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > * {
+  min-height: 2.4em;
+}
+
+/* Text */
+.summary {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: @cy_accent;
+}
+
+.notification.critical .summary {
+  color: @cy_alert;
+}
+
+.notification.low .summary {
+  color: @cy_sub;
+}
+
+.body {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: @cy_fg;
+}
+
+.time {
+  font-size: 0.75rem;
+  color: @cy_dim;
+}
+
+.image {
+  margin-right: 10px;
+}
+
+/* Action buttons */
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > *
+  .notification-action {
+  border-radius: 2px;
+  background-color: @cy_bg_alt;
+  color: @cy_fg;
+  margin: 6px 4px;
+  padding: 6px;
+  border: 1px solid alpha(@cy_accent, 0.25);
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > *
+  .notification-action:hover {
+  background-color: alpha(@cy_accent, 0.12);
+  border: 1px solid @cy_accent;
+  color: @cy_accent;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > *
+  .notification-action:active {
+  background-color: @cy_accent;
+  color: @cy_on_acc;
+}
+
+/* Close button */
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .close-button {
+  background-color: transparent;
+  color: @cy_dim;
+  border: 1px solid alpha(@cy_dim, 0.5);
+  border-radius: 2px;
+  margin: 8px;
+  padding: 2px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .close-button:hover {
+  color: @cy_alert;
+  border-color: @cy_alert;
+}
+
+/* Progress */
+.notification progress,
+.notification progressbar trough {
+  background-color: @cy_raise;
+  border-radius: 0;
+  min-height: 3px;
+}
+
+.notification progressbar progress,
+.notification.low progress,
+.notification.normal progress {
+  background-image: linear-gradient(to right, @cy_accent, @cy_accent2);
+  background-color: transparent;
+}
+
+.notification.critical progress {
+  background-color: @cy_alert;
+  background-image: none;
+}

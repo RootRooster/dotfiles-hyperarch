@@ -1,0 +1,301 @@
+/*
+ *   ______  ______  ____________
+ *  / ___/ \/ / __ )/ ____/ __ \
+ * / /   \  / __  / __/ / /_/ /
+ * / /___ / / /_/ / /___/ _, _/
+ * \____//_/_____/_____/_/ |_|   waybar
+ *
+ * Colors come from the variant file (default/ or matugen/):
+ * cy_bg cy_bg_alt cy_fg cy_dim cy_accent cy_accent2 cy_ok cy_warn cy_alert
+ * -----------------------------------------------------
+*/
+
+/* -----------------------------------------------------
+ * General
+ * ----------------------------------------------------- */
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "FiraCode Nerd Font", "Font Awesome 7 Free", "Font Awesome 6 Free", "Material Icons", monospace;
+    font-size: 13px;
+    font-weight: bold;
+    border: none;
+    border-radius: 0px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: @cy_bg;
+    border-bottom: 1px solid alpha(@cy_accent, 0.55);
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+.modules-left   { margin: 4px 0px 4px 8px; }
+.modules-center { margin: 4px 0px; }
+.modules-right  { margin: 4px 8px 4px 0px; }
+
+tooltip {
+    background: @cy_bg_alt;
+    border: 1px solid @cy_accent;
+    padding: 4px;
+}
+
+tooltip label {
+    color: @cy_fg;
+    font-weight: normal;
+}
+
+/* -----------------------------------------------------
+ * Shared "terminal box" look for modules
+ * ----------------------------------------------------- */
+
+#custom-updates,
+#custom-vpn,
+#custom-agenda,
+#network,
+#pulseaudio,
+#bluetooth.on,
+#bluetooth.connected,
+#battery,
+#hardware,
+#tools,
+#clock {
+    background: @cy_bg_alt;
+    color: @cy_fg;
+    padding: 1px 10px;
+    margin: 0px 0px 0px 6px;
+    border: 1px solid alpha(@cy_accent, 0.35);
+    border-left: 2px solid @cy_accent;
+    transition: all 0.2s ease-out;
+}
+
+#custom-updates:hover,
+#custom-vpn:hover,
+#custom-agenda:hover,
+#network:hover,
+#pulseaudio:hover,
+#bluetooth:hover,
+#battery:hover,
+#clock:hover {
+    color: @cy_accent;
+    border-color: @cy_accent;
+    box-shadow: 0 0 6px alpha(@cy_accent, 0.6);
+}
+
+/* -----------------------------------------------------
+ * Workspaces
+ * ----------------------------------------------------- */
+
+#workspaces {
+    background: @cy_bg_alt;
+    border: 1px solid alpha(@cy_accent, 0.35);
+    padding: 0px 2px;
+}
+
+#workspaces button {
+    padding: 0px 7px;
+    margin: 2px 1px;
+    color: @cy_dim;
+    background: transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+#workspaces button.active {
+    color: @cy_bg_alt;
+    background: @cy_accent;
+    box-shadow: 0 0 8px alpha(@cy_accent, 0.7);
+}
+
+#workspaces button.urgent {
+    color: @cy_bg_alt;
+    background: @cy_alert;
+}
+
+#workspaces button:hover {
+    color: @cy_accent;
+    background: alpha(@cy_accent, 0.12);
+    box-shadow: none;
+}
+
+/* -----------------------------------------------------
+ * Window title
+ * ----------------------------------------------------- */
+
+#window {
+    color: @cy_accent;
+    padding: 0px 10px;
+}
+
+window#waybar.empty #window {
+    background: transparent;
+}
+
+/* -----------------------------------------------------
+ * Per-module accents
+ * ----------------------------------------------------- */
+
+#custom-vpn {
+    color: @cy_ok;
+    border-left-color: @cy_ok;
+}
+
+#network.disconnected {
+    color: @cy_alert;
+    border-left-color: @cy_alert;
+}
+
+#network.ethernet {
+    border-left-color: @cy_ok;
+}
+
+#pulseaudio.muted {
+    color: @cy_dim;
+    border-left-color: @cy_dim;
+}
+
+#bluetooth.off {
+    background: transparent;
+    padding: 0px;
+    margin: 0px;
+}
+
+#bluetooth.connected {
+    border-left-color: @cy_accent2;
+}
+
+#custom-updates.yellow {
+    color: @cy_warn;
+    border-left-color: @cy_warn;
+}
+
+#custom-updates.red {
+    color: @cy_alert;
+    border-left-color: @cy_alert;
+}
+
+#clock {
+    color: @cy_accent2;
+    border-left-color: @cy_accent2;
+    border-color: alpha(@cy_accent2, 0.35);
+    margin-right: 0px;
+}
+
+#clock:hover {
+    color: @cy_accent2;
+    border-color: @cy_accent2;
+    box-shadow: 0 0 6px alpha(@cy_accent2, 0.6);
+}
+
+/* -----------------------------------------------------
+ * Battery
+ * ----------------------------------------------------- */
+
+#battery.charging,
+#battery.plugged {
+    color: @cy_ok;
+    border-left-color: @cy_ok;
+}
+
+#battery.warning:not(.charging) {
+    color: @cy_warn;
+    border-left-color: @cy_warn;
+}
+
+@keyframes alert-blink {
+    to {
+        background: @cy_bg_alt;
+        color: @cy_alert;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background: @cy_alert;
+    color: @cy_bg_alt;
+    border-left-color: @cy_alert;
+    animation-name: alert-blink;
+    animation-duration: 0.6s;
+    animation-timing-function: steps(2);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* -----------------------------------------------------
+ * Hardware & tools drawers
+ * ----------------------------------------------------- */
+
+#custom-system,
+#disk, #memory, #cpu, #language {
+    color: @cy_fg;
+    padding: 0px;
+    margin: 0px;
+}
+
+#custom-system,
+#custom-tools {
+    color: @cy_accent;
+    margin-right: 6px;
+}
+
+#custom-cliphist,
+#custom-hyprshade,
+#custom-hypridle,
+#power-profiles-daemon {
+    color: @cy_fg;
+    margin-right: 10px;
+}
+
+#custom-hypridle.notactive {
+    color: @cy_alert;
+}
+
+/* -----------------------------------------------------
+ * Notification / exit
+ * ----------------------------------------------------- */
+
+#custom-notification {
+    font-family: "Material Icons";
+    font-size: 18px;
+    color: @cy_accent;
+    margin: 0px 4px 0px 12px;
+}
+
+#custom-exit {
+    font-size: 15px;
+    color: @cy_alert;
+    margin: 0px 10px 0px 8px;
+}
+
+#custom-exit:hover {
+    color: @cy_fg;
+}
+
+/* -----------------------------------------------------
+ * Tray
+ * ----------------------------------------------------- */
+
+#tray {
+    padding: 0px 10px 0px 6px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+/* -----------------------------------------------------
+ * Calendar agenda
+ * ----------------------------------------------------- */
+
+#custom-agenda {
+    color: @cy_accent;
+    border-left-color: @cy_accent;
+    padding: 1px 8px;
+}
+
+#custom-agenda.today {
+    color: @cy_accent2;
+    border-left-color: @cy_accent2;
+}

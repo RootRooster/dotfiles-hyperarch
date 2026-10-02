@@ -1,0 +1,142 @@
+# Cyber prompt — matches the Cyber Neon waybar / kitty panels.
+#
+#   ┌─[nixson@archlinux]─[~/Projects/pwn_example]─[ main*⇡]─[ venv]
+#   └─❯                                        󰖂 10.10.14.7  2.3s  23:41:07
+#
+# Switch back to the old prompt in ~/.config/zshrc/20-customization (zen.toml).
+
+console_title_template = '{{ .Shell }} in {{ .Folder }}'
+version = 3
+final_space = true
+
+[palette]
+  fg      = '#c8f7ff'
+  sub     = '#8fb8c4'
+  dim     = '#4a6b78'
+  accent  = '#00f0ff'
+  accent2 = '#ff2bd6'
+  ok      = '#39ff14'
+  warn    = '#ffb000'
+  alert   = '#ff3355'
+
+[secondary_prompt]
+  template = '<p:dim>  └─</><p:accent>❯❯</> '
+  background = 'transparent'
+
+# Previous prompts collapse to a single line to keep scrollback clean
+[transient_prompt]
+  template = '<p:dim>{{ .Folder }}</> ❯ '
+  background = 'transparent'
+  foreground_templates = ['{{ if gt .Code 0 }}p:alert{{ end }}', 'p:accent']
+
+# ---------------- line 1 ----------------
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    type = 'text'
+    style = 'plain'
+    foreground = 'p:dim'
+    template = '┌─'
+
+  # user@host (magenta when root, amber over SSH)
+  [[blocks.segments]]
+    type = 'session'
+    style = 'plain'
+    foreground = 'p:accent2'
+    foreground_templates = ['{{ if .Root }}p:alert{{ end }}', '{{ if .SSHSession }}p:warn{{ end }}']
+    template = '<p:dim>[</>{{ .UserName }}<p:dim>@</>{{ .HostName }}<p:dim>]</>'
+
+  [[blocks.segments]]
+    type = 'path'
+    style = 'plain'
+    foreground = 'p:accent'
+    template = '<p:dim>─[</>{{ .Path }}<p:dim>]</>'
+
+    [blocks.segments.properties]
+      style = 'agnoster_short'
+      max_depth = 4
+      home_icon = '~'
+
+  [[blocks.segments]]
+    type = 'git'
+    style = 'plain'
+    foreground = 'p:ok'
+    foreground_templates = ['{{ if or (.Working.Changed) (.Staging.Changed) }}p:warn{{ end }}']
+    template = '<p:dim>─[</> {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }}{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}<p:dim>]</>'
+
+    [blocks.segments.properties]
+      branch_icon = ''
+      commit_icon = '@'
+      fetch_status = true
+
+  [[blocks.segments]]
+    type = 'python'
+    style = 'plain'
+    foreground = 'p:sub'
+    template = '{{ if .Venv }}<p:dim>─[</> {{ .Venv }}<p:dim>]</>{{ end }}'
+
+    [blocks.segments.properties]
+      display_mode = 'environment'
+      fetch_virtual_env = true
+
+# ---------------- right side ----------------
+[[blocks]]
+  type = 'rprompt'
+  overflow = 'hidden'
+
+  # VPN IP (tun*/wg*) — the address you want as LHOST
+  [[blocks.segments]]
+    type = 'command'
+    style = 'plain'
+    foreground = 'p:ok'
+    template = '{{ if .Output }}󰖂 {{ .Output }}  {{ end }}'
+
+    [blocks.segments.properties]
+      shell = 'bash'
+      command = "ip -o -4 addr show 2>/dev/null | awk '$2 ~ /^(tun|wg|tap)/ {split($4, a, \"/\"); print a[1]; exit}'"
+
+  [[blocks.segments]]
+    type = 'executiontime'
+    style = 'plain'
+    foreground = 'p:warn'
+    template = ' {{ .FormattedMs }}  '
+
+    [blocks.segments.properties]
+      threshold = 2000
+      style = 'austin'
+
+  [[blocks.segments]]
+    type = 'time'
+    style = 'plain'
+    foreground = 'p:dim'
+    template = '{{ .CurrentDate | date "15:04:05" }}'
+
+# ---------------- line 2 ----------------
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    type = 'text'
+    style = 'plain'
+    foreground = 'p:dim'
+    template = '└─'
+
+  [[blocks.segments]]
+    type = 'status'
+    style = 'plain'
+    foreground = 'p:alert'
+    template = '{{ if gt .Code 0 }}[{{ .Code }}]─{{ end }}'
+
+    [blocks.segments.properties]
+      always_enabled = true
+
+  [[blocks.segments]]
+    type = 'text'
+    style = 'plain'
+    foreground_templates = ['{{ if gt .Code 0 }}p:alert{{ end }}', 'p:accent']
+    template = '❯'

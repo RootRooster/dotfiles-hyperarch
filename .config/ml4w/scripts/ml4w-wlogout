@@ -1,6 +1,16 @@
 #!/usr/bin/env bash
-res_w=$(hyprctl -j monitors | jq '.[] | select(.focused==true) | .width')
-res_h=$(hyprctl -j monitors | jq '.[] | select(.focused==true) | .height')
-h_scale=$(hyprctl -j monitors | jq '.[] | select (.focused == true) | .scale' | sed 's/\.//')
-w_margin=$((res_h * 27 / h_scale))
-wlogout -b 5 -T $w_margin -B $w_margin
+# Power menu (Cyber side panel): one button per row, inside a 560px panel on the left.
+# Toggle: a second call closes an open menu.
+pgrep -x wlogout >/dev/null && { pkill -x wlogout; exit 0; }
+
+read -r w h scale < <(hyprctl -j monitors | jq -r '.[] | select(.focused==true) | "\(.width) \(.height) \(.scale)"')
+read -r lw lh < <(awk -v w="$w" -v h="$h" -v s="$scale" 'BEGIN { printf "%d %d", w / s, h / s }')
+
+panel=560   # must match the panel width in themes/cyber/style.css
+left=56
+rows=5
+row_h=88    # button height incl. spacing
+right=$((lw - panel + left))
+top=$(((lh - rows * row_h) / 2))
+
+wlogout -b 1 -r 10 -L "$left" -R "$right" -T "$top" -B "$top"

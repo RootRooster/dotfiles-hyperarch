@@ -1,0 +1,109 @@
+/*
+ * Cyber Wi-Fi menu — matches the "Cyber Neon" waybar theme.
+ * Used by ~/.config/hypr/scripts/wifi-menu.sh
+ */
+
+configuration {
+    font:                 "JetBrainsMono Nerd Font 11";
+    show-icons:           false;
+    hover-select:         false;
+    me-select-entry:      "";
+    me-accept-entry:      "MousePrimary";
+}
+
+* {
+    bg:          rgba(8, 11, 16, 0.94);
+    bg-alt:      #0f1620;
+    fg:          #c8f7ff;
+    dim:         #4a6b78;
+    accent:      #00f0ff;
+    accent2:     #ff2bd6;
+
+    background-color: transparent;
+    text-color:       @fg;
+}
+
+window {
+    width:            44em;
+    location:         north east;
+    anchor:           north east;
+    x-offset:         -1em;
+    y-offset:         2.6em;
+    border:           1px 1px 1px 3px;
+    border-color:     @accent;
+    border-radius:    0;
+    background-color: @bg;
+    transparency:     "real";
+}
+
+mainbox {
+    padding:  0.8em;
+    spacing:  0.6em;
+    children: [ "inputbar", "message", "listview" ];
+}
+
+inputbar {
+    padding:          0.5em 0.7em;
+    spacing:          0.6em;
+    background-color: @bg-alt;
+    border:           0 0 1px 0;
+    border-color:     @dim;
+    children:         [ "prompt", "textbox-arrow", "entry" ];
+}
+
+prompt {
+    text-color: @accent;
+}
+
+textbox-arrow {
+    expand:     false;
+    str:        "❯";
+    text-color: @accent2;
+}
+
+entry {
+    placeholder:       "filter…";
+    placeholder-color: @dim;
+    cursor:            text;
+}
+
+message {
+    padding:          0.4em 0.7em;
+    background-color: @bg-alt;
+    border:           0 0 0 2px;
+    border-color:     @accent2;
+}
+
+textbox {
+    text-color: @fg;
+    markup:     true;
+}
+
+listview {
+    lines:        10;
+    columns:      1;
+    dynamic:      true;
+    fixed-height: false;
+    scrollbar:    false;
+    spacing:      0.15em;
+    cycle:        true;
+}
+
+element {
+    padding: 0.35em 0.7em;
+    border:  0 0 0 2px;
+    border-color: transparent;
+}
+
+element selected.normal,
+element selected.active,
+element selected.urgent {
+    background-color: rgba(0, 240, 255, 0.10);
+    border-color:     @accent;
+    text-color:       @accent;
+}
+
+element-text {
+    text-color: inherit;
+    markup:     true;
+}

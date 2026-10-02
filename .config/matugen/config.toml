@@ -81,9 +81,22 @@ input_path = '~/.config/matugen/templates/nvim-colors.vim'
 output_path = '~/.config/nvim/colors/matugen.vim'
 post_hook = 'pkill -SIGUSR1 nvim'
 
+# Firefox: generated into a cache dir, then copied into every profile by the
+# hook (the profile folder name changes when Firefox makes a new profile).
 [templates.firefox]
-input_path  = "~/.config/matugen/templates/firefox-userChrome.css"
-output_path = "~/.config/mozilla/firefox/6fsyuyb1.default-release/chrome/userChrome.css"
+input_path  = '~/.config/matugen/templates/firefox-userChrome.css'
+output_path = '~/.cache/matugen/firefox/userChrome.css'
+post_hook = '~/.config/matugen/scripts/firefox.sh'
+
+[templates.firefox_content]
+input_path  = '~/.config/matugen/templates/firefox-userContent.css'
+output_path = '~/.cache/matugen/firefox/userContent.css'
+post_hook = '~/.config/matugen/scripts/firefox.sh'
+
+[templates.ghidra]
+input_path  = '~/.config/matugen/templates/ghidra.theme'
+output_path = '~/.cache/matugen/ghidra.theme'
+post_hook = '~/.config/matugen/scripts/ghidra.sh'
 
 [templates.bat]
 input_path = '~/.config/matugen/templates/bat-theme.tmTheme'
@@ -93,3 +106,7 @@ post_hook = 'bat cache --build'
 [templates.vesktop]
 input_path = '~/.config/matugen/templates/vesktop-colors.css'
 output_path = '~/.config/vesktop/settings/quickCss.css'
+
+[templates.yazi]
+input_path = '~/.config/matugen/templates/yazi-theme.toml'
+output_path = '~/.config/yazi/theme.toml'

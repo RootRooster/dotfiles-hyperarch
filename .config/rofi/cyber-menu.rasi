@@ -1,0 +1,101 @@
+/*
+ * Cyber menu — compact, keyboard-first menus (screenshot, etc.).
+ * No search bar: keys are bound by the calling script (j/k/l/q + letter shortcuts).
+ */
+
+configuration {
+    font:            "JetBrainsMono Nerd Font 13";
+    show-icons:      false;
+    hover-select:    false;
+    me-select-entry: "";
+    me-accept-entry: "MousePrimary";
+}
+
+* {
+    bg:      rgba(11, 16, 23, 0.96);
+    bg-alt:  #0f1620;
+    fg:      #c8f7ff;
+    sub:     #8fb8c4;
+    dim:     #4a6b78;
+    accent:  #00f0ff;
+    accent2: #ff2bd6;
+
+    background-color: transparent;
+    text-color:       @fg;
+}
+
+window {
+    width:            38em;
+    location:         center;
+    anchor:           center;
+    transparency:     "real";
+    border:           1px 1px 1px 3px;
+    border-color:     @accent;
+    border-radius:    0;
+    background-color: @bg;
+}
+
+mainbox {
+    background-color: rgba(11, 16, 23, 0.85);
+    padding:  1em;
+    spacing:  0.8em;
+    children: [ "textbox-title", "listview", "message" ];
+}
+
+textbox-title {
+    expand:     false;
+    padding:    0 0.2em;
+    str:        "";
+    text-color: @accent2;
+}
+
+inputbar {
+    enabled: false;
+}
+
+listview {
+    lines:        6;
+    columns:      1;
+    dynamic:      false;
+    fixed-height: true;
+    scrollbar:    false;
+    cycle:        true;
+    spacing:      0.2em;
+}
+
+element {
+    padding:      0.55em 0.9em;
+    border:       0 0 0 2px;
+    border-color: transparent;
+    cursor:       pointer;
+}
+
+element normal.normal,
+element alternate.normal {
+    background-color: transparent;
+    text-color:       @fg;
+}
+
+element selected.normal {
+    background-color: rgba(0, 240, 255, 0.10);
+    border-color:     @accent;
+    text-color:       @accent;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:       inherit;
+    markup:           true;
+}
+
+message {
+    padding:          0.45em 0.9em;
+    background-color: @bg-alt;
+    border:           0 0 0 2px;
+    border-color:     @dim;
+}
+
+textbox {
+    text-color: @dim;
+    markup:     true;
+}

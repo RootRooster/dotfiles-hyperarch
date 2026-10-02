@@ -1,0 +1,16 @@
+/* -----------------------------------------------------
+ * Cyber · Matugen (follows wallpaper colors)
+ * ----------------------------------------------------- */
+@import '../../../../../.config/waybar/colors.css';
+
+@define-color cy_bg      alpha(@surface_container_lowest, 0.88);
+@define-color cy_bg_alt  @surface_container;
+@define-color cy_fg      @on_surface;
+@define-color cy_dim     @outline;
+@define-color cy_accent  @primary;
+@define-color cy_accent2 @tertiary;
+@define-color cy_ok      @primary_fixed;
+@define-color cy_warn    @tertiary_fixed;
+@define-color cy_alert   @error;
+
+@import '../style.css';

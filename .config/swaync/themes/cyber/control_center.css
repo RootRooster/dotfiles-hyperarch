@@ -1,0 +1,267 @@
+/* -----------------------------------------------------
+ * Cyber · notification center
+ * ----------------------------------------------------- */
+
+* {
+  color: @cy_fg;
+  font-size: 0.95rem;
+  font-family: "JetBrainsMono Nerd Font", "Font Awesome 7 Free", "Font Awesome 6 Free", monospace;
+  transition: 150ms;
+}
+
+.control-center {
+  background: alpha(@cy_bg, 0.95);
+  border-radius: 2px;
+  border: 1px solid alpha(@cy_accent, 0.35);
+  border-left: 3px solid @cy_accent;
+  box-shadow: 0 0 14px alpha(@cy_accent, 0.15);
+  padding: 8px 8px 0 8px;
+}
+
+/* Title + clear button */
+.widget-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 6px 12px 6px 12px;
+}
+
+.widget-title > label {
+  color: @cy_accent;
+}
+
+.widget-title button {
+  background: transparent;
+  border: 1px solid alpha(@cy_alert, 0.5);
+  border-radius: 2px;
+  color: @cy_alert;
+  padding: 3px 12px;
+  font-size: 0.85rem;
+}
+
+.widget-title button:hover {
+  background: alpha(@cy_alert, 0.15);
+  border-color: @cy_alert;
+}
+
+/* Do not disturb */
+.widget-dnd {
+  margin: 6px 12px 0px 12px;
+  color: @cy_sub;
+}
+
+.widget-dnd > switch {
+  background: @cy_raise;
+  border-radius: 2px;
+  border: 1px solid alpha(@cy_accent, 0.3);
+  box-shadow: none;
+}
+
+.widget-dnd > switch:checked {
+  background: alpha(@cy_accent2, 0.35);
+  border-color: @cy_accent2;
+}
+
+.widget-dnd > switch slider {
+  background: @cy_fg;
+  border-radius: 2px;
+}
+
+.widget-dnd > switch:checked slider {
+  background: @cy_accent2;
+}
+
+/* Quick toggle buttons */
+.widget-buttons-grid {
+  margin: 6px;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+  margin: 5px;
+  padding: 1rem 3.5rem;
+  background: @cy_bg_alt;
+  color: @cy_fg;
+  border-radius: 2px;
+  border: 1px solid alpha(@cy_accent, 0.3);
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+  background: alpha(@cy_accent, 0.12);
+  border-color: @cy_accent;
+  color: @cy_accent;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
+  background: @cy_accent;
+  border-color: @cy_accent;
+  color: @cy_on_acc;
+  box-shadow: 0 0 8px alpha(@cy_accent, 0.5);
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked label {
+  color: @cy_on_acc;
+}
+
+/* Brightness / volume sliders */
+.widget-backlight,
+.widget-volume {
+  padding: 10px 14px;
+  margin: 0px 12px 10px 12px;
+  border-radius: 2px;
+  background: @cy_bg_alt;
+  border-left: 2px solid alpha(@cy_accent, 0.6);
+}
+
+.widget-backlight trough,
+.widget-volume trough {
+  background: @cy_raise;
+  margin: 8px;
+  min-height: 4px;
+  border-radius: 0;
+}
+
+.widget-backlight trough highlight,
+.widget-volume trough highlight {
+  background-image: linear-gradient(to right, @cy_accent, @cy_accent2);
+  border: none;
+  border-radius: 0;
+}
+
+.widget-backlight trough slider,
+.widget-volume trough slider {
+  background: @cy_fg;
+  border: 2px solid @cy_accent;
+  border-radius: 2px;
+}
+
+/* Media player */
+.widget-mpris {
+  border-radius: 2px;
+  margin: 2px 12px 12px 12px;
+}
+
+.widget-mpris button {
+  background: alpha(@cy_bg, 0.8);
+  border: 1px solid alpha(@cy_accent, 0.3);
+  border-radius: 2px;
+  padding: 4px;
+  margin: 20px 2px;
+}
+
+.widget-mpris button:hover {
+  border-color: @cy_accent;
+}
+
+.widget-mpris button image {
+  color: @cy_accent;
+}
+
+.widget-mpris-player {
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.widget-mpris-album-art {
+  border-radius: 2px;
+  margin: 8px 0 0 8px;
+}
+
+.widget-mpris-title {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 10px 20px 0 0;
+  color: @cy_fg;
+  background-color: alpha(@cy_bg, 0.75);
+}
+
+.widget-mpris-subtitle {
+  font-size: 0.85rem;
+  margin: 0px 20px 5px 0px;
+  color: @cy_sub;
+  background-color: alpha(@cy_bg, 0.75);
+}
+
+/* Notifications inside the center */
+.control-center .notification-row .notification-background .notification {
+  background-color: @cy_bg_alt;
+  border-radius: 2px;
+  border-left: 2px solid @cy_accent;
+  margin: 4px 0px;
+  padding: 8px;
+}
+
+.control-center .notification-row .notification-background .notification.critical {
+  border-left-color: @cy_alert;
+}
+
+.control-center .notification-row .notification-background .notification.low {
+  border-left-color: @cy_dim;
+}
+
+.control-center .notification-row .notification-background .close-button {
+  background-color: transparent;
+  border: 1px solid alpha(@cy_dim, 0.5);
+  border-radius: 2px;
+  color: @cy_dim;
+  padding: 3px;
+}
+
+.control-center .notification-row .notification-background .close-button:hover {
+  color: @cy_alert;
+  border-color: @cy_alert;
+}
+
+/* Groups */
+.notification-group {
+  margin: 4px 12px;
+}
+
+.notification-group-headers {
+  font-weight: 700;
+  color: @cy_sub;
+}
+
+.notification-group-collapse-button,
+.notification-group-close-all-button {
+  background: @cy_bg_alt;
+  border: 1px solid alpha(@cy_accent, 0.3);
+  border-radius: 2px;
+  padding: 4px;
+}
+
+.notification-group-collapse-button:hover,
+.notification-group-close-all-button:hover {
+  border-color: @cy_accent;
+}
+
+/* Toggles: outlined + tinted when on, instead of a solid block */
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
+  background: alpha(@cy_accent, 0.14);
+  border: 1px solid @cy_accent;
+  border-left: 3px solid @cy_accent;
+  color: @cy_accent;
+  box-shadow: 0 0 8px alpha(@cy_accent, 0.25);
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked label,
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked image {
+  color: @cy_accent;
+}
+
+/* Action buttons inside the center */
+.control-center .notification-row .notification-background .notification .notification-action {
+  background: @cy_bg;
+  border: 1px solid alpha(@cy_accent, 0.25);
+  border-radius: 2px;
+  color: @cy_sub;
+  padding: 5px 8px;
+  margin: 6px 4px 0 4px;
+  font-size: 0.85rem;
+}
+
+.control-center .notification-row .notification-background .notification .notification-action:hover {
+  border-color: @cy_accent;
+  color: @cy_accent;
+  background: alpha(@cy_accent, 0.10);
+}
+
+.widget-title button label { color: @cy_alert; }

@@ -1,250 +1,191 @@
 /*
-#  ____        __ _  
-# |  _ \ ___  / _(_) 
-# | |_) / _ \| |_| | 
-# |  _ < (_) |  _| | 
-# |_| \_\___/|_| |_| 
-#                    
-# by Stephan Raabe (2023) 
-# ----------------------------------------------------- 
-*/
+ * Cyber launcher — matches the Cyber waybar / power menu / lock screen.
+ * Opened with Super+Space (~/.config/hypr/scripts/launcher.sh).
+ * Previous ML4W version: config.rasi.bak
+ */
 
-/* ---- Configuration ---- */
 configuration {
-    modi:                       "drun,filebrowser,window,run";
-    font:                       "Fira Sans 11";
-    show-icons:                 true;
-    display-drun:                " ";
-    display-run:                 " ";
-    display-filebrowser:         "";
-    display-window:              "";
-	drun-display-format:        "{name}";
-    hover-select:               false;
-    scroll-method:              1;
-    me-select-entry:            "";
-    me-accept-entry:            "MousePrimary";
-    window-format:              "{w} · {c} · {t}";
-    
+    modi:                  "drun,ai:~/.config/rofi/scripts/ai.sh,run,filebrowser,window";
+    font:                  "JetBrainsMono Nerd Font 12";
+    show-icons:            true;
+    icon-theme:            "Colloid-Dark";
+    display-drun:          "APPS";
+    display-ai:            "AI";
+    display-run:           "RUN";
+    display-filebrowser:   "FILES";
+    display-window:        "WINDOWS";
+    drun-display-format:   "{name}<span foreground='#4a6b78' size='small'>  {generic}</span>";
+    window-format:         "{w} · {c} · {t}";
+    hover-select:          false;
+    scroll-method:         1;
+    me-select-entry:       "";
+    me-accept-entry:       "MousePrimary";
+
+    /* Vim-style navigation: Ctrl+j/k = down/up, Ctrl+h/l (or Tab / Shift+Tab) = previous/next tab.
+       Ctrl+h/j/k/l are removed from rofi's defaults below so they don't clash. */
+    kb-row-down:           "Down,Control+n,Control+j";
+    kb-row-up:             "Up,Control+p,Control+k";
+    kb-mode-previous:      "Shift+Left,Control+ISO_Left_Tab,Control+h,ISO_Left_Tab";
+    kb-mode-next:          "Shift+Right,Control+Tab,Control+l,Tab";
+    kb-accept-entry:       "Control+m,Return,KP_Enter";
+    kb-remove-char-back:   "BackSpace,Shift+BackSpace";
+    kb-remove-to-eol:      "";
+    kb-mode-complete:      "";
+    /* Tab / Shift+Tab switch tabs (APPS -> AI -> ...) instead of moving the selection */
+    kb-element-next:       "";
+    kb-element-prev:       "";
 }
 
-/* ---- Load font ---- */
-@import "~/.config/ml4w/settings/rofi-font.rasi"
+* {
+    bg:          rgba(11, 16, 23, 0.95);
+    bg-alt:      #0f1620;
+    raise:       #162130;
+    fg:          #c8f7ff;
+    sub:         #8fb8c4;
+    dim:         #4a6b78;
+    accent:      #00f0ff;
+    accent2:     #ff2bd6;
+    alert:       #ff3355;
 
-/* ---- Load colors ---- */
-@theme "~/.config/rofi/colors.rasi"
+    background-color: transparent;
+    text-color:       @fg;
+}
 
-/* ---- Load wallpaper ---- */
-@import "~/.cache/ml4w/hyprland-dotfiles/current_wallpaper.rasi"
-
-/* ---- Load border width ---- */
-@import "~/.config/ml4w/settings/rofi-border.rasi"
-
-/* ---- Load border radius ---- */
-@import "~/.config/ml4w/settings/rofi-border-radius.rasi"
-
-// Main //
 window {
-    height:                      35em;
-    width:                       56em;
-    transparency:                "real";
-    fullscreen:                  false;
-    enabled:                     true;
-    cursor:                      "default";
-    spacing:                     0em;
-    padding:                     0em;
-    border:                      @border-width;
-    border-color:                @primary;
-    border-radius:               @border-radius;
-    background-color:            @background;
+    width:            46em;
+    location:         center;
+    anchor:           center;
+    transparency:     "real";
+    border:           1px 1px 1px 3px;
+    border-color:     @accent;
+    border-radius:    0;
+    background-color: @bg;
 }
 
 mainbox {
-    enabled:                     true;
-    spacing:                     0em;
-    padding:                     0em;
-    orientation:                 horizontal;
-    children:                    [ "imagebox" , "listbox" ];
-    background-color:            transparent;
-    background-image:            @current-image;
+    background-color: rgba(11, 16, 23, 0.85);
+    padding:  1.1em;
+    spacing:  0.9em;
+    children: [ "inputbar", "message", "listview", "mode-switcher" ];
 }
 
-imagebox {
-    padding:                     20px;
-    background-color:            transparent;
-    orientation:                 vertical;
-    children:                    [ "inputbar", "dummy", "mode-switcher" ];
-}
-
-dummy {
-    background-color:            transparent;
-}
-
-// Modes //
-mode-switcher {
-    orientation:                 horizontal;
-    width:                       6.6em;
-    enabled:                     true;
-    padding:                     1.5em;
-    spacing:                     1.5em;
-    background-color:            transparent;
-}
-
-button {
-    padding:                     15px;
-    border-radius:               2em;
-    border:                      0;    
-    cursor:                      pointer;
-    background-color:            @background;
-    text-color:                  @on-surface;
-}
-
-button selected {
-    padding:                     15px;
-    border-radius:               2em;    
-    background-color:            @surface;
-    text-color:                  @on-surface;
-}
-
-// Inputs //
+/* Search bar:  ❯ search…                                   APPS */
 inputbar {
-    enabled:                     true;
-    margin: 1em;
-    children:                    [ "textbox-prompt-colon", "entry" ];
-    border-radius:               2em;
-    background-color:            @surface;
+    padding:          0.7em 0.9em;
+    spacing:          0.7em;
+    background-color: @bg-alt;
+    border:           0 0 1px 0;
+    border-color:     @dim;
+    children:         [ "textbox-arrow", "entry", "prompt" ];
 }
 
-textbox-prompt-colon {
-    enabled:                     true;
-    expand:                      false;
-    str:                         "  ";
-    padding:                     1em 0.3em 0 0;
-    text-color:                  @on-surface;
-    background-color:            transparent;
+textbox-arrow {
+    expand:     false;
+    str:        "❯";
+    text-color: @accent2;
 }
 
 entry {
-    enabled:                     true;
-    spacing:                     1em;
-    padding:                     1em;
-    text-color:                  @on-surface;
-    cursor:                      text;
-    placeholder:                 "Search";
-    background-color:            transparent;
-    placeholder-color:           inherit;
+    placeholder:       "search…";
+    placeholder-color: @dim;
+    cursor:            text;
 }
 
-// Lists //
-listbox {
-    padding:                     0em;
-    spacing:                     0em;
-    orientation:                 horizontal;
-    children:                    [ "listview" ];
-    background-color:            @background;
+prompt {
+    text-color: @dim;
 }
 
-listview {
-    padding:                     1.5em;
-    spacing:                     0.5em;
-    enabled:                     true;
-    columns:                     1;
-    lines:                       1;
-    cycle:                       true;
-    dynamic:                     true;
-    scrollbar:                   false;
-    layout:                      vertical;
-    reverse:                     false;
-    fixed-height:                true;
-    fixed-columns:               true;
-    cursor:                      "default";
-    background-color:            transparent;
-    text-color:                  @on-surface;
-}
-
-
-// Elements //
-element {
-    enabled:                     true;
-    spacing:                     10px;
-    padding:                     0.5em;
-    cursor:                      pointer;
-    background-color:            transparent;
-    text-color:                  @on-surface;
-}
-
-element selected.normal {
-    background-color:            @surface;
-    text-color:                  @on-surface;
-    border-radius:               1.5em;
-}
-
-element normal.normal {
-    background-color:            inherit;
-    text-color:                  @on-surface;
-}
-
-element normal.urgent {
-    background-color:            inherit;
-    text-color:                  @on-surface;
-}
-
-element normal.active {
-    background-color:            inherit;
-    text-color:                  @on-surface;
-}
-
-element selected.urgent {
-    background-color:            inherit;
-    text-color:                  @on-surface;
-}
-
-element selected.active {
-    background-color:            inherit;
-    text-color:                  @on-surface;
-}
-
-element alternate.normal {
-    background-color:            inherit;
-    text-color:                  @on-surface;
-}
-
-element alternate.urgent {
-    background-color:            inherit;
-    text-color:                  @on-surface;
-}
-
-element alternate.active {
-    background-color:            inherit;
-    text-color:                  @on-surface;
-}
-
-element-icon {
-    size:                        3em;
-    cursor:                      inherit;
-    background-color:            transparent;
-    text-color:                  inherit;
-    border-radius:               0em;
-}
-
-element-text {
-    vertical-align:              0.5;
-    horizontal-align:            0.0;
-    cursor:                      inherit;
-    background-color:            transparent;
-    text-color:                  inherit;
-}
-
-// Error message //
-error-message {
-    text-color:                  @on-surface;
-    background-color:            @background;
-    text-transform:              capitalize;
-    children:                    [ "textbox" ];
+message {
+    padding:          0.4em 0.9em;
+    background-color: @bg-alt;
+    border:           0 0 0 2px;
+    border-color:     @accent2;
 }
 
 textbox {
-    text-color:                  inherit;
-    background-color:            inherit;
-    vertical-align:              0.5;
-    horizontal-align:            0.5;
+    text-color: @sub;
+}
+
+/* Results */
+listview {
+    lines:        9;
+    columns:      1;
+    dynamic:      true;
+    fixed-height: true;
+    scrollbar:    false;
+    cycle:        true;
+    spacing:      0.15em;
+}
+
+element {
+    padding:      0.45em 0.9em;
+    spacing:      0.9em;
+    border:       0 0 0 2px;
+    border-color: transparent;
+    cursor:       pointer;
+}
+
+element normal.normal,
+element alternate.normal {
+    background-color: transparent;
+    text-color:       @fg;
+}
+
+element normal.active,
+element alternate.active {
+    text-color: @accent;
+}
+
+element normal.urgent,
+element alternate.urgent {
+    text-color: @alert;
+}
+
+element selected.normal,
+element selected.active,
+element selected.urgent {
+    background-color: rgba(0, 240, 255, 0.10);
+    border-color:     @accent;
+    text-color:       @accent;
+}
+
+element-icon {
+    size:             1.5em;
+    background-color: transparent;
+    cursor:           inherit;
+}
+
+element-text {
+    vertical-align:   0.5;
+    background-color: transparent;
+    text-color:       inherit;
+    cursor:           inherit;
+    markup:           true;
+}
+
+/* Mode tabs along the bottom */
+mode-switcher {
+    spacing: 0.5em;
+}
+
+button {
+    padding:          0.45em 0;
+    background-color: @bg-alt;
+    text-color:       @dim;
+    border:           0 0 2px 0;
+    border-color:     @raise;
+    cursor:           pointer;
+}
+
+button selected {
+    background-color: rgba(0, 240, 255, 0.08);
+    text-color:       @accent;
+    border-color:     @accent;
+}
+
+error-message {
+    padding:          1em;
+    background-color: @bg;
+    border:           0 0 0 3px;
+    border-color:     @alert;
 }
