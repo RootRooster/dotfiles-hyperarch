@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+source ~/.config/hypr/scripts/menu-toggle.sh; menu_toggle screenshot || exit 0   # same shortcut again closes it
 # Cyber screenshot menu — keyboard first, vim keys.
 #
 #   j / k        move down / up          a  area      w  window

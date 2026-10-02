@@ -1,4 +1,5 @@
 #!/bin/bash
+source ~/.config/hypr/scripts/menu-toggle.sh; menu_toggle windows || exit 0   # same shortcut again closes it
 #    ____                
 #   / __/__  ______ _____
 #  / _// _ \/ __/ // (_-<
@@ -27,7 +28,8 @@ fi
 # Filter for mapped (visible) and non-hidden windows
 # Format the output for Rofi: "Window Title --HYPRCTL_INFO--<address>--<workspace_id>"
 # This allows Rofi to display the title, but the full string (with address and workspace) is passed on selection.
-rofi_input=$(hyprctl clients -j | jq -r '.[] | select(.mapped == true and .hidden == false) | "\(.title) --HYPRCTL_INFO--\(.address)--\(.workspace.id)"')
+# Visible: "workspace  app  title" · hidden 2nd column: the address + workspace this script parses
+rofi_input=$(hyprctl clients -j | jq -r '.[] | select(.mapped == true and .hidden == false) | "\(.workspace.id)  \(.class)  ·  \(.title)\t--HYPRCTL_INFO--\(.address)--\(.workspace.id)"')
 
 # Check if there are any windows to display
 if [ -z "$rofi_input" ]; then
@@ -39,7 +41,9 @@ fi
 # -dmenu: Rofi's dmenu mode for selection
 # -i: Case-insensitive searching
 # -p "Active Window": Sets the Rofi prompt
-selected_line=$(echo -e "$rofi_input" | rofi -dmenu -config ~/.config/rofi/config-compact.rasi -no-show-icons -i -p "Active Window")
+selected_line=$(echo -e "$rofi_input" | rofi -dmenu -config ~/.config/rofi/config-compact.rasi -no-show-icons -i -p "Windows" \
+    -display-columns 1 -display-column-separator $'\t' \
+    -mesg "<span foreground='#4a6b78'>workspace · app · title   ·   Enter focus · Ctrl+J/K move · Esc close</span>")
 
 # Check if a selection was made (user didn't press Esc or close Rofi)
 if [ -n "$selected_line" ]; then

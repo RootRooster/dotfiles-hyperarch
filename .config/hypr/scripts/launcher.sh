@@ -12,7 +12,9 @@ _launch_walker() {
 
 # Use Rofi
 _launch_rofi() {
-    pkill rofi || rofi -show drun -replace -i  
+    source ~/.config/hypr/scripts/menu-toggle.sh
+    menu_toggle launcher || return   # Super+Space again closes it
+    rofi -show drun -i
 }
 
 if [ "$launcher" == "walker" ]; then

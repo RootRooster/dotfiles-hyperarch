@@ -3,6 +3,8 @@
 Cheat sheet for this Hyprland (ML4W-based, Cyber-themed) setup.
 `Super` = Windows key. Taken from the live key bindings on 2026-10-02.
 
+Menus and panels close when you press their shortcut again.
+
 Open it from anywhere: `shortcuts` · `less $SHORTCUTS` · `bat $SHORTCUTS`
 
 **Where things live**
@@ -26,7 +28,7 @@ Open it from anywhere: `shortcuts` · `less $SHORTCUTS` · `bat $SHORTCUTS`
 | `Super + Shift + E` | yazi (terminal file manager), floating |
 | `Super + V` | Clipboard history (see below) |
 | `Super + Ctrl + E` | Emoji picker (rofimoji) |
-| `Super + Ctrl + C` | Calculator |
+| `Super + Ctrl + C` | Calculator (qalc: math, units, currency, hex/bin) |
 | `Super + Ctrl + K` | Searchable list of all key bindings |
 
 ## Windows
@@ -44,7 +46,7 @@ Open it from anywhere: `shortcuts` · `less $SHORTCUTS` · `bat $SHORTCUTS`
 | `Super + Left-drag` | Move window |
 | `Super + Right-drag` | Resize window |
 | `Alt + Tab` | Cycle windows (hold to repeat) |
-| `Ctrl + Tab` | Window switcher menu |
+| `Ctrl + Tab` | Window switcher (search open windows by app / title) |
 | `Super + Shift + T` | Make every window on the workspace float |
 
 ## Workspaces
@@ -76,7 +78,7 @@ Open it from anywhere: `shortcuts` · `less $SHORTCUTS` · `bat $SHORTCUTS`
 | `Super + Print` | Screenshot menu |
 | `Super + Alt + F` | Instant full-screen screenshot (saved) |
 | `Super + Alt + S` | Instant area screenshot (saved) |
-| `Super + Alt + A` | Grab text from a screen area (OCR) |
+| `Super + Alt + A` | Grab text: select an area, its text is copied (OCR) |
 
 **Inside the screenshot menu** — lowercase = copy to clipboard, `Shift` = copy **and** save to `~/Pictures`
 
@@ -181,6 +183,10 @@ Clicking an open panel's icon again closes it (calendar, Bluetooth, sound, netwo
 
 **Clipboard history (`Super + V`)** — everything you copy is recorded (up to 750 entries; images get thumbnails).
 Type to search · `Enter` copy · `Shift + Enter` copy and paste into the window you came from · `Ctrl + D` delete entry · `Ctrl + Shift + D` clear all (asks first) · `Ctrl + J / K` move · `Esc` close
+
+**Screen shaders** (Waybar tools drawer → shader icon) — left click toggles the last shader on/off, right click picks one: Night light (warm, less blue light) · Vibrance · Off
+
+**Calculator (qalc)** — type an expression, `Enter`. Examples: `2^16`, `0x41 to dec`, `255 to hex`, `5 GiB to MB`, `100 USD to EUR`. `Ctrl + D` or the shortcut again closes it.
 
 **Lock screen** — type the password, `Enter`. The box turns magenta while checking, red if wrong, amber if Caps Lock is on.
 

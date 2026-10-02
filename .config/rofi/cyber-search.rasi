@@ -1,0 +1,63 @@
+/*
+ * Cyber searchable menu — shared by the clipboard, window switcher, key binding list,
+ * screen shader picker and OCR language picker.
+ * Builds on cyber-menu.rasi: adds a search bar (the -p prompt is shown as a label).
+ *
+ * Keys: type to filter · Enter pick · Ctrl+J/K or ↑/↓ move · Esc close
+ */
+
+@import "~/.config/rofi/cyber-menu.rasi"
+
+configuration {
+    kb-row-down:             "Down,Control+n,Control+j";
+    kb-row-up:               "Up,Control+p,Control+k";
+    kb-accept-entry:         "Return,KP_Enter";
+    kb-remove-to-eol:        "";
+    kb-mode-complete:        "";
+}
+
+window {
+    width: 46em;
+}
+
+mainbox {
+    children: [ "textbox-title", "inputbar", "listview", "message" ];
+}
+
+/* Title row only shows when a script sets it via -theme-str */
+textbox-title {
+    enabled: true;
+}
+
+inputbar {
+    enabled:          true;
+    padding:          0.6em 0.9em;
+    spacing:          0.7em;
+    background-color: @bg-alt;
+    border:           0 0 1px 0;
+    border-color:     @dim;
+    children:         [ "prompt", "textbox-arrow", "entry" ];
+}
+
+prompt {
+    text-color: @accent;
+}
+
+textbox-arrow {
+    expand:     false;
+    str:        "❯";
+    text-color: @accent2;
+}
+
+entry {
+    text-color:        @fg;
+    placeholder:       "search…";
+    placeholder-color: @dim;
+    cursor:            text;
+}
+
+listview {
+    lines:        10;
+    dynamic:      true;
+    fixed-height: true;
+}

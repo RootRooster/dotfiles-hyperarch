@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+source ~/.config/hypr/scripts/menu-toggle.sh; menu_toggle keybinds || exit 0   # same shortcut again closes it
 #    __            __   _         ___             
 #   / /_____ __ __/ /  (_)__  ___/ (_)__  ___ ____
 #  /  '_/ -_) // / _ \/ / _ \/ _  / / _ \/ _ `(_-<
