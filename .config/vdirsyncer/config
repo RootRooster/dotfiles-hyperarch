@@ -1,0 +1,23 @@
+[general]
+status_path = "~/.local/share/vdirsyncer/status/"
+
+# iCloud (Apple Calendar) <-> local .ics files used by khal.
+# Password comes from the keyring: secret-tool ... service icloud-caldav (see username file below)
+[pair icloud]
+a = "icloud_remote"
+b = "icloud_local"
+collections = ["from a"]
+metadata = ["color", "displayname"]
+conflict_resolution = "a wins"
+
+[storage icloud_remote]
+type = "caldav"
+url = "https://caldav.icloud.com/"
+# Username lives outside the dotfiles repo; password stays in the keyring.
+username.fetch = ["command", "cat", "~/.local/share/vdirsyncer/icloud-username"]
+password.fetch = ["command", "sh", "-c", "secret-tool lookup service icloud-caldav username \"$(cat ~/.local/share/vdirsyncer/icloud-username)\""]
+
+[storage icloud_local]
+type = "filesystem"
+path = "~/.local/share/calendars/icloud/"
+fileext = ".ics"

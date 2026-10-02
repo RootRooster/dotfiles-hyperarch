@@ -1,0 +1,66 @@
+[calendars]
+
+  [[personal]]
+    path = /home/nixson/.local/share/calendars/icloud/26196233-4A24-4375-B922-F29AD0AB6F27
+    color = dark cyan
+
+  [[lecture]]
+    path = /home/nixson/.local/share/calendars/icloud/4CDC1AD4-192E-4B6D-A630-74925042DBCD
+    color = light magenta
+
+  [[fitness]]
+    path = /home/nixson/.local/share/calendars/icloud/56968D96-9321-4BC3-B28F-6318039D91EF
+    color = dark green
+
+[locale]
+  timeformat = %H:%M
+  dateformat = %d.%m.%Y
+  longdateformat = %d.%m.%Y
+  datetimeformat = %d.%m.%Y %H:%M
+  longdatetimeformat = %d.%m.%Y %H:%M
+  firstweekday = 0
+  weeknumbers = left
+
+[default]
+  default_calendar = personal
+  highlight_event_days = True
+  timedelta = 2d
+
+[view]
+  frame = color
+  theme = dark
+
+# ikhal colors: named ANSI colors, remapped to the Cyber Neon palette by
+# ~/.config/waybar/scripts/cyber-term.sh (no white backgrounds anywhere).
+[palette]
+  header = light cyan, black
+  footer = light gray, black
+  line header = dark cyan, black
+  alt header = white, black
+  bright = dark cyan, black
+  list = white, black
+  list focused = black, dark cyan
+  edit = white, dark gray
+  edit focus = black, dark cyan
+  button = white, dark gray
+  button focused = black, dark cyan
+  reveal focus = black, dark cyan
+  today focus = black, dark magenta
+  today = dark magenta, black
+  date header = light gray, black
+  date header focused = black, dark cyan
+  date header selected = dark cyan, dark gray
+  dayname = light gray, black
+  monthname = dark cyan, black
+  weeknumber_right = light gray, black
+  alert = white, dark red
+  mark = black, dark green
+  frame = dark gray, black
+  frame focus = dark cyan, black
+  frame focus color = dark cyan, black
+  frame focus top = dark magenta, black
+  editbx = white, dark gray
+  editcp = black, dark cyan
+  popupbg = white, black
+  popupper = black, dark cyan
+  caption = dark cyan, black

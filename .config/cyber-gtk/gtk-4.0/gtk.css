@@ -1,0 +1,81 @@
+/*
+ * Cyber Neon palette for GTK4 / libadwaita apps launched with
+ * XDG_CONFIG_HOME=~/.config/cyber-gtk (sound panel, etc.).
+ * Matches the "Cyber Neon" waybar theme.
+ */
+
+@define-color accent_color          #00f0ff;
+@define-color accent_bg_color       #00c8d6;
+@define-color accent_fg_color       #061016;
+
+@define-color window_bg_color       #0b1017;
+@define-color window_fg_color       #c8f7ff;
+@define-color view_bg_color         #0f1620;
+@define-color view_fg_color         #c8f7ff;
+
+@define-color headerbar_bg_color    #0b1017;
+@define-color headerbar_fg_color    #00f0ff;
+@define-color headerbar_border_color #00f0ff;
+@define-color headerbar_backdrop_color #0b1017;
+@define-color headerbar_shade_color rgba(0, 240, 255, 0.25);
+
+@define-color card_bg_color         #111a25;
+@define-color card_fg_color         #c8f7ff;
+@define-color card_shade_color      rgba(0, 0, 0, 0.5);
+
+@define-color popover_bg_color      #111a25;
+@define-color popover_fg_color      #c8f7ff;
+@define-color dialog_bg_color       #0f1620;
+@define-color dialog_fg_color       #c8f7ff;
+@define-color sidebar_bg_color      #0b1017;
+@define-color sidebar_fg_color      #c8f7ff;
+
+@define-color success_color         #39ff14;
+@define-color success_bg_color      #2bd10f;
+@define-color warning_color         #ffb000;
+@define-color warning_bg_color      #d99500;
+@define-color error_color           #ff3355;
+@define-color error_bg_color        #e0244a;
+@define-color destructive_color     #ff3355;
+@define-color destructive_bg_color  #e0244a;
+
+/* Sharper, terminal-like shapes */
+window, .card, list.boxed-list, popover > contents, button, entry {
+    border-radius: 2px;
+}
+
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
+}
+
+headerbar {
+    border-bottom: 1px solid alpha(@accent_color, 0.5);
+    box-shadow: none;
+}
+
+.card, list.boxed-list {
+    border: 1px solid alpha(@accent_color, 0.18);
+    border-left: 2px solid @accent_color;
+}
+
+/* Volume sliders and level meters glow in the accent colors */
+scale trough {
+    background-color: alpha(@accent_color, 0.12);
+    min-height: 4px;
+}
+scale highlight {
+    background-image: linear-gradient(to right, #00f0ff, #ff2bd6);
+    background-color: transparent;
+}
+scale slider {
+    background-color: #c8f7ff;
+    border: 2px solid @accent_color;
+    box-shadow: 0 0 6px alpha(@accent_color, 0.6);
+}
+levelbar block.filled {
+    background-color: #39ff14;
+}
+levelbar block.empty {
+    background-color: alpha(@accent_color, 0.08);
+}
