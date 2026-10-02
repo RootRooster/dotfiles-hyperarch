@@ -1,0 +1,7 @@
+# -----------------------------------------------------
+# Shortcut cheat sheet (~/SHORTCUTS.md, tracked in the dotfiles repo)
+#   shortcuts            read it (bat, paged)
+#   less $SHORTCUTS      or any other tool
+# -----------------------------------------------------
+export SHORTCUTS="$HOME/SHORTCUTS.md"
+shortcuts() { bat --paging=always --language=md --style=plain "$SHORTCUTS" 2>/dev/null || less "$SHORTCUTS"; }
