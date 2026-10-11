@@ -10,7 +10,7 @@ class="$1" title="$2"
 shift 2
 
 if hyprctl clients -j | jq -e --arg c "$class" 'any(.[]; .class == $c)' >/dev/null; then
-  hyprctl dispatch closewindow "class:^($class)$" >/dev/null
+  hyprctl dispatch "hl.dsp.window.close({ window = 'class:^($class)\$' })" >/dev/null
   exit 0
 fi
 

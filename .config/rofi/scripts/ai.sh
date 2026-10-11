@@ -21,7 +21,7 @@ case "${ROFI_RETV:-0}" in
 
     # Replace an answer window that is still open
     if hyprctl clients -j | jq -e 'any(.[]; .class == "cyber-ai")' >/dev/null; then
-      hyprctl dispatch closewindow 'class:^(cyber-ai)$' >/dev/null
+      hyprctl dispatch "hl.dsp.window.close({ window = 'class:^(cyber-ai)\$' })" >/dev/null
       sleep 0.3
     fi
 

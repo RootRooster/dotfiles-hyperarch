@@ -14,7 +14,7 @@ DEFAULT=blue-light-filter
 
 current() {
   local path
-  path=$(hyprctl getoption decoration:screen_shader -j | jq -r '.str // empty')
+  path=$(hyprctl -j getoption decoration.screen_shader | jq -r '.str // .value // empty')
   [ -n "$path" ] && [ "$path" != "[[EMPTY]]" ] && basename "$path" .glsl
 }
 
@@ -29,10 +29,10 @@ label() {
 
 apply() {
   if [ "$1" = "off" ]; then
-    hyprctl keyword decoration:screen_shader "[[EMPTY]]" >/dev/null
+    hyprctl eval 'hl.config({ decoration = { screen_shader = "" } })' >/dev/null
     notify-send -a "Screen shader" "Screen shader off"
   else
-    hyprctl keyword decoration:screen_shader "$SHADERS/$1.glsl" >/dev/null
+    hyprctl eval "hl.config({ decoration = { screen_shader = '$SHADERS/$1.glsl' } })" >/dev/null
     notify-send -a "Screen shader" "$(label "$1" | sed 's/^[^ ]*  //; s/  .*//')" "Toggle it from the Waybar tools drawer (shader icon)"
   fi
 }

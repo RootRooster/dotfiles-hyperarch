@@ -10,14 +10,12 @@
 source "$HOME/.config/ml4w/scripts/ml4w-notification-handler"
 
 _loadGameMode() {
-    hyprctl --batch "\
-        keyword animations:enabled 0;\
-        keyword decoration:shadow:enabled 0;\
-        keyword decoration:blur:enabled 0;\
-        keyword general:gaps_in 0;\
-        keyword general:gaps_out 0;\
-        keyword general:border_size 1;\
-        keyword decoration:rounding 0"
+    hyprctl eval 'hl.config({
+        animations = { enabled = false },
+        general    = { gaps_in = 0, gaps_out = 0, border_size = 1 },
+        decoration = { rounding = 0, active_opacity = 1, inactive_opacity = 1, fullscreen_opacity = 1,
+                       shadow = { enabled = false }, blur = { enabled = false } },
+    })'
 }
 
 if [ -f $HOME/.config/ml4w/settings/gamemode-enabled ]; then

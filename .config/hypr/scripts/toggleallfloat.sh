@@ -6,7 +6,14 @@
 # /_/   \_\_|_|_| |_|\___/ \__,_|\__|
 #
 
-hyprctl dispatch workspaceopt allfloat
+# Float every window on the workspace, or tile them all if none are tiled
+hyprctl eval '
+local wins = hl.get_workspace_windows(hl.get_active_workspace())
+local any_tiled = false
+for _, w in ipairs(wins) do if not w.floating then any_tiled = true end end
+for _, w in ipairs(wins) do
+    hl.dispatch(hl.dsp.window.float({ window = "address:" .. w.address, action = any_tiled and "enable" or "disable" }))
+end'
 
 # Notifications
 source "$HOME/.config/ml4w/scripts/ml4w-notification-handler"

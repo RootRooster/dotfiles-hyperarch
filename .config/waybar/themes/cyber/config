@@ -41,8 +41,8 @@
     // Cyber overrides (take precedence over modules.json)
     // -----------------------------------------------------
     "hyprland/workspaces": {
-        "on-scroll-up": "hyprctl dispatch workspace r-1",
-        "on-scroll-down": "hyprctl dispatch workspace r+1",
+        "on-scroll-up": "hyprctl dispatch \"hl.dsp.focus({ workspace = 'r-1' })\"",
+        "on-scroll-down": "hyprctl dispatch \"hl.dsp.focus({ workspace = 'r+1' })\"",
         "on-click": "activate",
         "all-outputs": true,
         "format": "{id}",
