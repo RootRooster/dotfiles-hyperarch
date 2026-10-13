@@ -42,7 +42,8 @@ bind(M("SHIFT + Z"), function() hl.config({ cursor = { zoom_factor = 1 } }) end,
 bind(M("Q"),         hl.dsp.window.close(),                                "Kill active window")
 bind(M("SHIFT + Q"), exec("hyprctl activewindow | grep pid | tr -d 'pid:' | xargs kill"), "Quit active window and all open instances")
 bind(M("M"),         hl.dsp.window.fullscreen({ mode = "maximized" }),     "Maximize window")
-bind(M("F"),         hl.dsp.window.float({ action = "toggle" }),           "Toggle active window into floating mode")
+bind(M("F"),         hl.dsp.window.fullscreen({ mode = "fullscreen" }),    "Fullscreen window (covers the bar)")
+bind(M("SHIFT + F"), hl.dsp.window.float({ action = "toggle" }),           "Toggle active window into floating mode")
 
 -- Toggle all windows on the workspace between floating and tiling
 local function toggle_all_float()

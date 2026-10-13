@@ -37,7 +37,8 @@ Open it from anywhere: `shortcuts` · `less $SHORTCUTS` · `bat $SHORTCUTS`
 |---|---|
 | `Super + Q` | Close window |
 | `Super + Shift + Q` | Force-kill window (kills its process) |
-| `Super + F` | Toggle floating |
+| `Super + F` | Fullscreen (hides the bar) |
+| `Super + Shift + F` | Toggle floating |
 | `Super + M` | Maximize (keeps gaps and the bar) |
 | `Super + G` | Toggle window group (tabs) |
 | `Super + H / J / K / L` | Focus left / down / up / right |
