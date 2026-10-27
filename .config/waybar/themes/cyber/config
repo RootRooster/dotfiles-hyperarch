@@ -8,7 +8,7 @@
     "spacing": 0,
     // Load Modules
     "include": [
-        "~/.config/ml4w/settings/waybar-quicklinks.json",
+        "~/.config/cyber/settings/waybar-quicklinks.json",
         "~/.config/waybar/modules.json"
     ],
     // Modules Left
@@ -71,22 +71,22 @@
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 40,
         "on-click": "~/.config/waybar/scripts/network-panel.sh",
-        "on-click-middle": "~/.config/ml4w/settings/networkmanager.sh",
-        "on-click-right": "~/.config/ml4w/scripts/nm-applet.sh toggle"
+        "on-click-middle": "~/.config/cyber/settings/networkmanager.sh",
+        "on-click-right": "~/.config/cyber/scripts/nm-applet.sh toggle"
     },
     "cpu": {
         "format": "CPU {usage}% ",
-        "on-click": "~/.config/ml4w/settings/system-monitor.sh"
+        "on-click": "~/.config/cyber/settings/system-monitor.sh"
     },
     "memory": {
         "format": "MEM {}% ",
-        "on-click": "~/.config/ml4w/settings/system-monitor.sh"
+        "on-click": "~/.config/cyber/settings/system-monitor.sh"
     },
     "disk": {
         "interval": 30,
         "format": "DSK {percentage_used}% ",
         "path": "/",
-        "on-click": "~/.config/ml4w/settings/system-monitor.sh"
+        "on-click": "~/.config/cyber/settings/system-monitor.sh"
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",

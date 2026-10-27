@@ -1,6 +1,6 @@
 # Shortcuts
 
-Cheat sheet for this Hyprland (ML4W-based, Cyber-themed) setup.
+Cheat sheet for this Hyprland Cyber setup (originally forked from ML4W).
 `Super` = Windows key. Taken from the live key bindings on 2026-10-02.
 
 Menus and panels close when you press their shortcut again.
@@ -11,7 +11,7 @@ Open it from anywhere: `shortcuts` · `less $SHORTCUTS` · `bat $SHORTCUTS`
 
 | What | Where |
 |---|---|
-| Core bindings (ML4W) | `~/.config/hypr/conf/keybindings/default.conf` |
+| Core bindings (legacy .conf) | `~/.config/hypr/conf/keybindings/default.conf` |
 | Your additions / overrides | `~/.config/hypr/conf/custom.conf` (loaded last, wins) |
 | See all live bindings | `hyprctl binds` or `Super + Ctrl + K` |
 

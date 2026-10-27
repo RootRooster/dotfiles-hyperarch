@@ -9,8 +9,8 @@
 #   Ctrl+Shift+D    clear the whole history (asks first)
 #   Ctrl+J/K, ↑/↓   move · Esc close
 #
-#   ml4w-cliphist     open the menu   (also: ml4w-cliphist d)
-#   ml4w-cliphist w   clear the history (asks first)
+#   cyber-cliphist     open the menu   (also: cyber-cliphist d)
+#   cyber-cliphist w   clear the history (asks first)
 
 THUMBS="${XDG_CACHE_HOME:-$HOME/.cache}/cliphist-thumbs"
 mkdir -p "$THUMBS"

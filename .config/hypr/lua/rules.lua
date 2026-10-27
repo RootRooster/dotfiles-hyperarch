@@ -1,6 +1,6 @@
 -- -----------------------------------------------------
 -- Window, layer and workspace rules
--- (was ml4w.conf, custom.conf, workspaces/default.conf)
+-- (was cyber.conf, custom.conf, workspaces/default.conf)
 -- -----------------------------------------------------
 
 -- Floating, centered window: float_center(name, class, {w, h}, pin?)
@@ -20,7 +20,7 @@ for _, ns in ipairs({ "swaync-control-center", "swaync-notification-window" }) d
     hl.layer_rule({ match = { namespace = ns }, blur = true, ignore_alpha = 0.5 })
 end
 
--- ML4W / general apps
+-- Cyber / general apps
 float_center("pavucontrol",           [[(.*org.pulseaudio.pavucontrol.*)]], { 700, 600 },  true)
 float_center("waypaper",              [[(.*waypaper.*)]],                   { 900, 700 },  true)
 float_center("newelle",               [[(io.github.qwersyk.Newelle)]],      { 1000, 700 }, true)

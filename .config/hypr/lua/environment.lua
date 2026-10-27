@@ -1,5 +1,5 @@
 -- -----------------------------------------------------
--- Environment variables (from ml4w.conf)
+-- Environment variables (from cyber.conf)
 -- -----------------------------------------------------
 
 -- XDG Desktop Portal

@@ -16,7 +16,7 @@ hl.on("hyprland.start", function()
     end
 
     -- Start Listeners
-    hl.exec_cmd("~/.config/ml4w/listeners.sh --startall")
+    hl.exec_cmd("~/.config/cyber/listeners.sh --startall")
 
     -- Start Polkit
     hl.exec_cmd("systemctl --user start hyprpolkitagent")

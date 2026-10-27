@@ -5,7 +5,7 @@
 
 local mainMod     = "SUPER"
 local HYPRSCRIPTS = "~/.config/hypr/scripts"
-local SCRIPTS     = "~/.config/ml4w/scripts"
+local SCRIPTS     = "~/.config/cyber/scripts"
 
 local exec = hl.dsp.exec_cmd
 
@@ -20,12 +20,12 @@ local function M(keys) -- "SHIFT + E" -> "SUPER + SHIFT + E"
 end
 
 -- Applications
-bind(M("T"),          exec("~/.config/ml4w/settings/terminal.sh"),         "Open the terminal")
-bind(M("B"),          exec("~/.config/ml4w/settings/browser.sh"),          "Open the browser")
-bind(M("E"),          exec("~/.config/ml4w/settings/filemanager.sh"),      "Open the filemanager")
+bind(M("T"),          exec("~/.config/cyber/settings/terminal.sh"),         "Open the terminal")
+bind(M("B"),          exec("~/.config/cyber/settings/browser.sh"),          "Open the browser")
+bind(M("E"),          exec("~/.config/cyber/settings/filemanager.sh"),      "Open the filemanager")
 bind(M("SHIFT + E"),  exec("kitty --class dotfiles-floating -e yazi"),     "Open yazi (terminal file manager)")
-bind(M("CTRL + E"),   exec("~/.config/ml4w/settings/emojipicker.sh"),      "Open the emoji picker")
-bind(M("CTRL + C"),   exec("~/.config/ml4w/settings/calculator.sh"),       "Open the calculator")
+bind(M("CTRL + E"),   exec("~/.config/cyber/settings/emojipicker.sh"),      "Open the emoji picker")
+bind(M("CTRL + C"),   exec("~/.config/cyber/settings/calculator.sh"),       "Open the calculator")
 
 -- Display zoom
 local function zoom_by(delta)
@@ -105,7 +105,7 @@ bind("CTRL + SHIFT + code:13", exec(HYPRSCRIPTS .. "/cyber-shot.sh"),       "Scr
 bind(M("ALT + F"),   exec(HYPRSCRIPTS .. "/screenshot.sh --instant"),       "Take an instant full-screen screenshot")
 bind(M("ALT + S"),   exec(HYPRSCRIPTS .. "/screenshot.sh --instant-area"),  "Take an instant area screenshot")
 bind(M("ALT + A"),   exec(HYPRSCRIPTS .. "/text-extractor.sh"),             "Extract text from an area")
-bind(M("CTRL + Q"),  exec("~/.config/ml4w/scripts/ml4w-wlogout"),           "Start wlogout")
+bind(M("CTRL + Q"),  exec("~/.config/cyber/scripts/cyber-wlogout"),           "Start wlogout")
 bind(M("SHIFT + W"), exec(HYPRSCRIPTS .. "/waypaper.sh --random"),          "Change the wallpaper")
 bind(M("CTRL + W"),  exec(HYPRSCRIPTS .. "/waypaper.sh"),                   "Open wallpaper selector")
 bind(M("ALT + W"),   exec(HYPRSCRIPTS .. "/wallpaper-automation.sh"),       "Start random wallpaper script")
@@ -114,7 +114,7 @@ bind(M("SHIFT + B"), exec("~/.config/waybar/launch.sh"),                    "Rel
 bind(M("CTRL + B"),  exec("~/.config/waybar/toggle.sh"),                    "Toggle waybar")
 bind(M("SHIFT + R"), exec(HYPRSCRIPTS .. "/loadconfig.sh"),                 "Reload Hyprland configuration")
 bind(M("SPACE"),     exec(HYPRSCRIPTS .. "/launcher.sh"),                   "Open application launcher")
-bind(M("V"),         exec(SCRIPTS .. "/ml4w-cliphist"),                     "Open clipboard manager")
+bind(M("V"),         exec(SCRIPTS .. "/cyber-cliphist"),                     "Open clipboard manager")
 bind(M("CTRL + T"),  exec("~/.config/waybar/themeswitcher.sh"),             "Open waybar theme switcher")
 bind(M("ALT + G"),   exec(HYPRSCRIPTS .. "/gamemode.sh"),                   "Toggle game mode")
 bind(M("CTRL + L"),  exec(HYPRSCRIPTS .. "/power.sh lock"),                 "Lock screen")
@@ -149,7 +149,7 @@ bind("XF86AudioPause",        exec("playerctl pause"),      "Audio pause")
 bind("XF86AudioNext",         exec("playerctl next"),       "Audio next")
 bind("XF86AudioPrev",         exec("playerctl previous"),   "Audio previous")
 bind("XF86AudioMicMute",      exec("pactl set-source-mute @DEFAULT_SOURCE@ toggle"), "Toggle microphone")
-bind("XF86Calculator",        exec("~/.config/ml4w/settings/calculator.sh"),         "Open calculator")
+bind("XF86Calculator",        exec("~/.config/cyber/settings/calculator.sh"),         "Open calculator")
 
 bind("code:238", exec("brightnessctl -d smc::kbd_backlight s +10"), "Keyboard backlight up")
 bind("code:237", exec("brightnessctl -d smc::kbd_backlight s 10-"), "Keyboard backlight down")

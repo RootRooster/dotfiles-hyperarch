@@ -7,7 +7,7 @@
 # 
 
 # Notifications
-source "$HOME/.config/ml4w/scripts/ml4w-notification-handler"
+source "$HOME/.config/cyber/scripts/cyber-notification-handler"
 
 _loadGameMode() {
     hyprctl eval 'hl.config({
@@ -18,7 +18,7 @@ _loadGameMode() {
     })'
 }
 
-if [ -f $HOME/.config/ml4w/settings/gamemode-enabled ]; then
+if [ -f $HOME/.config/cyber/settings/gamemode-enabled ]; then
     _loadGameMode
     notify_user --a "System" \
         --i "joystick" \

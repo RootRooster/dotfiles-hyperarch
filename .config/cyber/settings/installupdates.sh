@@ -1,0 +1,1 @@
+$(cat ~/.config/cyber/settings/terminal.sh) --class dotfiles-floating -e ~/.config/cyber/scripts/cyber-install-system-updates

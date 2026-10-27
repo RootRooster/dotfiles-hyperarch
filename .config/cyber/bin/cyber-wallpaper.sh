@@ -8,8 +8,8 @@
 SEARCH_PATH="$HOME/Pictures/Wallpapers"
 
 # Load Settings
-if [ -f ~/.config/ml4w/settings/wallpaper-folder ]; then
-    SEARCH_PATH=$(cat ~/.config/ml4w/settings/wallpaper-folder)
+if [ -f ~/.config/cyber/settings/wallpaper-folder ]; then
+    SEARCH_PATH=$(cat ~/.config/cyber/settings/wallpaper-folder)
 fi
 eval SEARCH_PATH="$SEARCH_PATH"
 SEARCH_PATH="$(realpath "$SEARCH_PATH")" 
@@ -29,10 +29,10 @@ if [ -z "$LIST" ]; then
     # Final check for the directory existence itself
     if [ ! -d "$SEARCH_PATH" ]; then
         echo "❌ Error: Directory '$SEARCH_PATH' not found. Please create it."
-        echo ":: You can define your own Wallpaper folder in ~/.config/ml4w/settings/wallpaper-folder"
+        echo ":: You can define your own Wallpaper folder in ~/.config/cyber/settings/wallpaper-folder"
     else
         echo "❌ Error: No images (jpg/png/webp/gif) found in $SEARCH_PATH."
-        echo ":: You can define your own Wallpaper folder in ~/.config/ml4w/settings/wallpaper-folder"
+        echo ":: You can define your own Wallpaper folder in ~/.config/cyber/settings/wallpaper-folder"
     fi
     exit 1
 fi

@@ -17,7 +17,7 @@ figlet -f smslant "Printers"
 # ------------------------------------------------------
 
 # Notifications
-source "$HOME/.config/ml4w/scripts/ml4w-notification-handler"
+source "$HOME/.config/cyber/scripts/cyber-notification-handler"
 
 if gum confirm "DO YOU WANT TO START TO INSTALL PRINTER SYSTEM NOW?"; then
     echo
@@ -60,7 +60,7 @@ echo
 echo ":: Installing printer system complete"
 sleep 2
 
-if [ -f ~/.config/ml4w/settings/printer-drivers.sh ]; then
+if [ -f ~/.config/cyber/settings/printer-drivers.sh ]; then
     if gum confirm "DO YOU WANT TO INSTALL PRINTER DRIVERS NOW?"; then
         echo
         echo ":: Install started."

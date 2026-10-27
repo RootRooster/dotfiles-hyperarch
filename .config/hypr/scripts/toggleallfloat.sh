@@ -16,7 +16,7 @@ for _, w in ipairs(wins) do
 end'
 
 # Notifications
-source "$HOME/.config/ml4w/scripts/ml4w-notification-handler"
+source "$HOME/.config/cyber/scripts/cyber-notification-handler"
 
 notify_user \
         --a "System" \

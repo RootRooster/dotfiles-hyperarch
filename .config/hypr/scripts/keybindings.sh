@@ -10,7 +10,7 @@ source ~/.config/hypr/scripts/menu-toggle.sh; menu_toggle keybinds || exit 0   #
 # -----------------------------------------------------
 # Load Launcher
 # -----------------------------------------------------
-launcher=$(cat $HOME/.config/ml4w/settings/launcher)
+launcher=$(cat $HOME/.config/cyber/settings/launcher)
 
 # -----------------------------------------------------
 # Read the live binds (descriptions come from hl.bind in lua/keybindings.lua)

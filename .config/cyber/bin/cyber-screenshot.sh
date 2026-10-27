@@ -11,11 +11,11 @@ SAVE_DIR="$HOME/Pictures"
 SAVE_FILENAME="screenshot_$(date +%d%m%Y_%H%M%S).jpg"
 
 # Load Settings
-if [ -f ~/.config/ml4w/settings/screenshot-folder ]; then
-    SAVE_DIR=$(cat ~/.config/ml4w/settings/screenshot-folder)
+if [ -f ~/.config/cyber/settings/screenshot-folder ]; then
+    SAVE_DIR=$(cat ~/.config/cyber/settings/screenshot-folder)
 fi
-if [ -f ~/.config/ml4w/settings/screenshot-filename ]; then
-    SAVE_FILENAME=$(cat ~/.config/ml4w/settings/screenshot-filename)
+if [ -f ~/.config/cyber/settings/screenshot-filename ]; then
+    SAVE_FILENAME=$(cat ~/.config/cyber/settings/screenshot-filename)
 fi
 
 # Generate path

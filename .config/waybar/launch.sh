@@ -29,51 +29,14 @@ sleep 0.5
 default_theme="/cyber;/cyber/default"
 
 # -----------------------------------------------------
-# Remove incompatible themes
+# Get current theme information from ~/.config/cyber/settings/waybar-theme.sh
 # -----------------------------------------------------
 
-if [ -f ~/.config/ml4w/settings/waybar-theme.sh ]; then
-    themestyle=$(cat ~/.config/ml4w/settings/waybar-theme.sh)
-    case "$themestyle" in
-    "/ml4w-modern;/ml4w-modern/light")
-        echo "$default_theme" >~/.config/ml4w/settings/waybar-theme.sh
-        ;;
-    "/ml4w-modern;/ml4w-modern/dark")
-        echo "$default_theme" >~/.config/ml4w/settings/waybar-theme.sh
-        ;;
-    "/ml4w;/ml4w/light")
-        echo "$default_theme" >~/.config/ml4w/settings/waybar-theme.sh
-        ;;
-    "/ml4w;/ml4w/dark")
-        echo "$default_theme" >~/.config/ml4w/settings/waybar-theme.sh
-        ;;
-    *)
-        echo
-        ;;
-    esac
-    if [ -d $HOME/.config/waybar/themes/ml4w-modern/light ]; then
-        rm -rf $HOME/.config/waybar/themes/ml4w-modern/light
-    fi
-    if [ -d $HOME/.config/waybar/themes/ml4w-modern/dark ]; then
-        rm -rf $HOME/.config/waybar/themes/ml4w-modern/dark
-    fi
-    if [ -d $HOME/.config/waybar/themes/ml4w/light ]; then
-        rm -rf $HOME/.config/waybar/themes/ml4w/light
-    fi
-    if [ -d $HOME/.config/waybar/themes/ml4w/dark ]; then
-        rm -rf $HOME/.config/waybar/themes/ml4w/dark
-    fi
-fi
-
-# -----------------------------------------------------
-# Get current theme information from ~/.config/ml4w/settings/waybar-theme.sh
-# -----------------------------------------------------
-
-if [ -f ~/.config/ml4w/settings/waybar-theme.sh ]; then
-    themestyle=$(cat ~/.config/ml4w/settings/waybar-theme.sh)
+if [ -f ~/.config/cyber/settings/waybar-theme.sh ]; then
+    themestyle=$(cat ~/.config/cyber/settings/waybar-theme.sh)
 else
-    touch ~/.config/ml4w/settings/waybar-theme.sh
-    echo "$default_theme" >~/.config/ml4w/settings/waybar-theme.sh
+    touch ~/.config/cyber/settings/waybar-theme.sh
+    echo "$default_theme" >~/.config/cyber/settings/waybar-theme.sh
     themestyle=$default_theme
 fi
 
@@ -100,7 +63,7 @@ if [ -f ~/.config/waybar/themes${arrThemes[1]}/style-custom.css ]; then
 fi
 
 # Check if waybar-disabled file exists
-if [ ! -f $HOME/.config/ml4w/settings/waybar-disabled ]; then
+if [ ! -f $HOME/.config/cyber/settings/waybar-disabled ]; then
     HYPRLAND_SIGNATURE=$(hyprctl instances -j | jq -r '.[0].instance')
     HYPRLAND_INSTANCE_SIGNATURE="$HYPRLAND_SIGNATURE" waybar -c ~/.config/waybar/themes${arrThemes[0]}/$config_file -s ~/.config/waybar/themes${arrThemes[1]}/$style_file &
     # env GTK_DEBUG=interactive waybar -c ~/.config/waybar/themes${arrThemes[0]}/$config_file -s ~/.config/waybar/themes${arrThemes[1]}/$style_file &

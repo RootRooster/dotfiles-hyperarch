@@ -8,13 +8,13 @@ source ~/.config/hypr/scripts/menu-toggle.sh; menu_toggle screenshot || exit 0  
 #
 #   lowercase key / l / Enter          → copy to the clipboard only
 #   Shift+key / L / Shift+Enter        → copy AND save (folder / filename from
-#                                        ~/.config/ml4w/settings/screenshot-folder and -filename)
+#                                        ~/.config/cyber/settings/screenshot-folder and -filename)
 #
 # Bound to Ctrl+Shift+4 and Super+Print in ~/.config/hypr/conf/custom.conf.
 
-eval folder="$(cat ~/.config/ml4w/settings/screenshot-folder 2>/dev/null || echo '~/Pictures')"
-eval name="$(cat ~/.config/ml4w/settings/screenshot-filename 2>/dev/null || echo 'screenshot_$(date +%Y%m%d_%H%M%S).png')"
-editor="$(cat ~/.config/ml4w/settings/screenshot-editor 2>/dev/null)"
+eval folder="$(cat ~/.config/cyber/settings/screenshot-folder 2>/dev/null || echo '~/Pictures')"
+eval name="$(cat ~/.config/cyber/settings/screenshot-filename 2>/dev/null || echo 'screenshot_$(date +%Y%m%d_%H%M%S).png')"
+editor="$(cat ~/.config/cyber/settings/screenshot-editor 2>/dev/null)"
 
 saved="$folder/$name"
 # Every capture is taken as PNG (the clipboard requires it) into a temp file,

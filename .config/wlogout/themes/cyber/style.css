@@ -1,6 +1,6 @@
 /*
  * Cyber power menu — side panel layout, mirroring the lock / login screens.
- * Panel geometry is set by ~/.config/ml4w/scripts/ml4w-wlogout (560px panel).
+ * Panel geometry is set by ~/.config/cyber/scripts/cyber-wlogout (560px panel).
  * Icons in ./icons are neon-tinted copies of ../../icons.
  */
 
@@ -21,7 +21,7 @@ window {
             #00f0ff 562px,
             rgba(5, 8, 12, 0.45) 562px,
             rgba(5, 8, 12, 0.45) 100%),
-        url("../../../../.cache/ml4w/hyprland-dotfiles/blurred_wallpaper.png");
+        url("../../../../.cache/cyber/blurred_wallpaper.png");
     background-size: cover;
 }
 

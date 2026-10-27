@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Notifications
-source "$HOME/.config/ml4w/scripts/ml4w-notification-handler"
+source "$HOME/.config/cyber/scripts/cyber-notification-handler"
 
 killall hypridle
 sleep 1

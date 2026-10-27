@@ -9,7 +9,7 @@
 # Shader files come from the hyprshade package (/usr/share/hyprshade/shaders).
 
 SHADERS=/usr/share/hyprshade/shaders
-SETTING=~/.config/ml4w/settings/hyprshade.sh   # remembers the last picked shader
+SETTING=~/.config/cyber/settings/hyprshade.sh   # remembers the last picked shader
 DEFAULT=blue-light-filter
 
 current() {
