@@ -1,0 +1,10 @@
+# System units enabled by install.sh (one per line, # for comments)
+NetworkManager.service
+bluetooth.service
+sddm.service
+systemd-timesyncd.service
+tailscaled.service
+snapper-timeline.timer
+snapper-cleanup.timer
+paccache.timer
+fstrim.timer

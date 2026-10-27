@@ -1,0 +1,3 @@
+# Hand-maintained: packages to install that aren't installed via pacman on the
+# current machine (save-packages.sh doesn't touch this file)
+oh-my-posh-bin

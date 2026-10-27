@@ -1,0 +1,17 @@
+android-studio
+claude-code
+grimblast-git
+hyprshade
+lazygit-git
+nmrs
+pwvucontrol
+python-pywal
+python-pywalfox
+python-screeninfo
+sddm-astronaut-theme
+tty-clock
+vesktop-bin
+visual-studio-code-bin
+vscodium-bin
+waypaper
+wlogout

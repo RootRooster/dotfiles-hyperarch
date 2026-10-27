@@ -1,6 +1,6 @@
 -- -----------------------------------------------------
 -- Window, layer and workspace rules
--- (was cyber.conf, custom.conf, workspaces/default.conf)
+-- (was ml4w.conf, custom.conf, workspaces/default.conf)
 -- -----------------------------------------------------
 
 -- Floating, centered window: float_center(name, class, {w, h}, pin?)

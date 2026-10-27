@@ -1,6 +1,6 @@
 -- -----------------------------------------------------
 -- Input, look & feel, layouts, misc
--- (was keyboard.conf, windows/, decorations/, layouts/, misc.conf, cyber.conf)
+-- (was keyboard.conf, windows/, decorations/, layouts/, misc.conf, ml4w.conf)
 -- -----------------------------------------------------
 
 local legacy = require("lua.legacy")

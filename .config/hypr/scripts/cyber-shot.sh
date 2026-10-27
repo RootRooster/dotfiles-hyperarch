@@ -10,7 +10,7 @@ source ~/.config/hypr/scripts/menu-toggle.sh; menu_toggle screenshot || exit 0  
 #   Shift+key / L / Shift+Enter        → copy AND save (folder / filename from
 #                                        ~/.config/cyber/settings/screenshot-folder and -filename)
 #
-# Bound to Ctrl+Shift+4 and Super+Print in ~/.config/hypr/conf/custom.conf.
+# Bound to Ctrl+Shift+4 and Super+Print in ~/.config/hypr/lua/keybindings.lua.
 
 eval folder="$(cat ~/.config/cyber/settings/screenshot-folder 2>/dev/null || echo '~/Pictures')"
 eval name="$(cat ~/.config/cyber/settings/screenshot-filename 2>/dev/null || echo 'screenshot_$(date +%Y%m%d_%H%M%S).png')"

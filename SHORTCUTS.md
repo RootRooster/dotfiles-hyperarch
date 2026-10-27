@@ -11,8 +11,8 @@ Open it from anywhere: `shortcuts` · `less $SHORTCUTS` · `bat $SHORTCUTS`
 
 | What | Where |
 |---|---|
-| Core bindings (legacy .conf) | `~/.config/hypr/conf/keybindings/default.conf` |
-| Your additions / overrides | `~/.config/hypr/conf/custom.conf` (loaded last, wins) |
+| Key bindings | `~/.config/hypr/lua/keybindings.lua` |
+| Window rules | `~/.config/hypr/lua/rules.lua` |
 | See all live bindings | `hyprctl binds` or `Super + Ctrl + K` |
 
 ---

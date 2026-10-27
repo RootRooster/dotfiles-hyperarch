@@ -1,0 +1,9 @@
+# Paths stow does not link into ~ (this replaces stow's built-in ignore list)
+\.git
+\.gitignore
+^/\.stow-local-ignore
+^/bootstrap
+^/README.*
+^/LICENSE.*
+.+~
+\#.*\#
