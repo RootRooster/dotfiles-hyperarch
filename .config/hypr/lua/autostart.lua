@@ -21,7 +21,7 @@ hl.on("hyprland.start", function()
     -- Start Polkit
     hl.exec_cmd("systemctl --user start hyprpolkitagent")
 
-    -- Keyring (Secret Service for vdirsyncer etc.)
+    -- Keyring (Secret Service for application credentials)
     hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
 
     -- Load Wallpaper

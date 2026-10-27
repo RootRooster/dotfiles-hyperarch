@@ -145,10 +145,16 @@ Open it from anywhere: `shortcuts` · `less $SHORTCUTS` · `bat $SHORTCUTS`
 | `Ctrl + J` / `Ctrl + K` (or arrows) | Move down / up |
 | `Esc` | Close |
 
-### AI tab (Claude Haiku)
+### AI tab (personal agent)
 
 `Super + Space` → `Tab` → type a question → `Enter`.
 A chat window opens and the answer streams in live; it's also copied to the clipboard.
+
+The agent lives in `~/.local/share/cyber-agent` (instructions `AGENT.md`, memory `memory/`,
+saved scripts `scripts/`). It reads your dotfiles, runs commands and scripts without asking,
+and takes a screenshot (without its own window) when a question is about what's on screen.
+It remembers shortcuts and setup facts, not one-off how-tos. Say "remember …" / "forget …" to steer it.
+Haiku answers quick questions; screen and multi-step tasks hand over to Sonnet (`↗` line).
 
 | Keys (in the chat window) | Action |
 |---|---|
@@ -167,8 +173,7 @@ A chat window opens and the answer streams in live; it's also copied to the clip
 | Hardware (CPU / MEM / DSK) | System monitor | | Hover to expand |
 | Bell | Notification center | Do not disturb | |
 | Power | Power menu | Lock screen | |
-| Calendar icon | Calendar (ikhal) | Sync with iCloud now | Hover: next 14 days |
-| Clock | Calendar (ikhal) | Sync with iCloud now | Hover: month view · Scroll: change month · Middle: back to today |
+| Clock | Displays the time | — | — |
 
 Clicking an open panel's icon again closes it (calendar, Bluetooth, sound, network).
 
@@ -176,7 +181,6 @@ Clicking an open panel's icon again closes it (calendar, Bluetooth, sound, netwo
 
 **Notification center** (bell) — Do-not-disturb switch, Wi-Fi / Bluetooth / mute / lock toggles, volume slider, notification list, Clear.
 
-**Calendar (ikhal)** — `h j k l` / arrows move · `t` today · `n` new event · `Enter` view · `d` delete · `/` search · `?` help · `q` quit
 
 **Bluetooth (bluetui)** — `j` / `k` move · `Space` / `Enter` connect / disconnect · `s` scan on/off · `t` trust · `f` favourite · `u` unpair · `e` rename · `Tab` switch pane · `q` quit
 

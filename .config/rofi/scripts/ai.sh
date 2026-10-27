@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# rofi "AI" tab: quick, very short answers from Claude Haiku via the Claude Code CLI
+# rofi "AI" tab: ask your personal agent (Claude Code, lives in ~/.local/share/cyber-agent)
 # (uses your Claude subscription login).
 #
 # Type a question in the AI tab and press Enter: rofi closes and a floating Cyber
@@ -36,7 +36,7 @@ case "${ROFI_RETV:-0}" in
       printf '\0message\x1f<span foreground="#4a6b78">last · ❯ %s</span>&#10;&#10;%s&#10;&#10;<span foreground="#4a6b78" size="small">type a new question and press Enter</span>\n' \
         "$(esc < "$STATE/question")" "$(esc < "$STATE/last")"
     else
-      printf '\0message\x1f<span foreground="#4a6b78">Ask Claude (Haiku) anything — type a question and press Enter.</span>\n'
+      printf '\0message\x1f<span foreground="#4a6b78">Ask your agent: shortcuts, your setup, tasks, or what is on screen. Enter to send.</span>\n'
     fi
     ;;
 esac

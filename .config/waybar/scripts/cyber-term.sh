@@ -4,7 +4,7 @@
 #   cyber-term.sh <window-class> <title> <command...>
 #
 # The ANSI palette is remapped to the Cyber Neon colors, so TUI apps that use
-# the standard 16 colors (bluetui, ikhal, ...) pick up the theme automatically.
+# the standard 16 colors (bluetui, ...) pick up the theme automatically.
 
 class="$1" title="$2"
 shift 2

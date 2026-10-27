@@ -285,17 +285,3 @@ window#waybar.empty #window {
     -gtk-icon-effect: highlight;
 }
 
-/* -----------------------------------------------------
- * Calendar agenda
- * ----------------------------------------------------- */
-
-#custom-agenda {
-    color: @cy_accent;
-    border-left-color: @cy_accent;
-    padding: 1px 8px;
-}
-
-#custom-agenda.today {
-    color: @cy_accent2;
-    border-left-color: @cy_accent2;
-}

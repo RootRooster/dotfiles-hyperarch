@@ -46,7 +46,6 @@ hl.window_rule({
 float_center("scratchpad", [[(scratchpad)]], { 1200, 780 })
 
 -- Cyber popups (custom.conf)
-float_center("cyber-calendar",  [[(cyber-calendar)]],          { 1000, 650 }) -- ikhal, from the waybar clock
 float_center("cyber-sound",     [[(com.saivert.pwvucontrol)]], { 920, 560 })  -- pwvucontrol, waybar volume
 float_center("cyber-network",   [[(org.nmrs.ui)]],             { 760, 560 })  -- nmrs, waybar network
 float_center("cyber-bluetooth", [[(cyber-bluetooth)]],         { 1000, 620 }) -- bluetui, waybar bluetooth

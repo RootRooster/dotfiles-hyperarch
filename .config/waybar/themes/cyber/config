@@ -33,7 +33,6 @@
         "group/tools",
         "custom/notification",
         "custom/exit",
-        "custom/agenda",
         "clock"
     ],
 
@@ -116,38 +115,9 @@
         "tooltip-format-enumerate-connected-battery": "{device_alias}  {device_battery_percentage}%",
         "on-click": "~/.config/waybar/scripts/cyber-term.sh cyber-bluetooth Bluetooth bluetui"
     },
-    "custom/agenda": {
-        "exec": "~/.config/waybar/scripts/agenda.sh",
-        "return-type": "json",
-        "interval": 300,
-        "signal": 9,
-        "hide-empty-text": true,
-        "max-length": 40,
-        "on-click": "~/.config/waybar/scripts/agenda.sh --open",
-        "on-click-right": "~/.config/waybar/scripts/agenda.sh --sync"
-    },
     "clock": {
         "format": "{:%H:%M:%S}",
         "interval": 1,
-        "tooltip-format": "<tt>{calendar}</tt>",
-        "calendar": {
-            "mode": "month",
-            "weeks-pos": "left",
-            "on-scroll": 1,
-            "format": {
-                "months":   "<span color='#00f0ff'><b>{}</b></span>",
-                "days":     "<span color='#c8f7ff'>{}</span>",
-                "weeks":    "<span color='#4a6b78'>W{}</span>",
-                "weekdays": "<span color='#ff2bd6'><b>{}</b></span>",
-                "today":    "<span background='#00f0ff' color='#0f1620'><b>{}</b></span>"
-            }
-        },
-        "actions": {
-            "on-scroll-up": "shift_down",
-            "on-scroll-down": "shift_up",
-            "on-click-middle": "shift_reset"
-        },
-        "on-click": "~/.config/waybar/scripts/agenda.sh --open",
-        "on-click-right": "~/.config/waybar/scripts/agenda.sh --sync"
+        "tooltip": false
     }
 }

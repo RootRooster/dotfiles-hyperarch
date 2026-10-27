@@ -211,7 +211,6 @@
   // Clock
   "clock": {
         "format": "{:%H:%M - %a %Od.%Om.%y}",
-    "on-click": "~/.config/waybar/scripts/agenda.sh --open",
     "timezone": "",
     "tooltip": false
   },
